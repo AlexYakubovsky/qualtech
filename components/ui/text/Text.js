@@ -49,9 +49,9 @@ Text.defaultProps = {
 }
 
 Text.propTypes = {
-	as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'b', 'i', 'small', 'strong']),
-	size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm']),
-	color: PropTypes.oneOf(['green']),
+	as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'li', 'b', 'i', 'small', 'strong']),
+	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm']),
+	color: PropTypes.oneOf(['primary', 'green']),
 	align: PropTypes.oneOf(['start', 'end', 'center', 'justify']),
 	weight: PropTypes.oneOf(['bold', 'light', 'medium', 'regular']),
 	overflow: PropTypes.oneOf(['fade', 'ellipsis']),

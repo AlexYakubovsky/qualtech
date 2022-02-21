@@ -1,0 +1,37 @@
+@import '/styles/variables'
+
+.button
+  border: 2.5px solid transparent
+  border-radius: 15px
+  font-family: $font-primary
+  cursor: pointer
+  transition: all .2s linear
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  align-self: center
+  outline: 0
+  padding: 10px
+  font-weight: 700
+
+  &:disabled
+    cursor: default
+    box-shadow: none
+
+
+.callback
+  border-color: $white
+  color: $white
+  height: 45px
+  font-size: 18px
+  line-height: 25px
+
+
+.md
+  width: 250px
+
+
+.isFluid
+  width: 100%
