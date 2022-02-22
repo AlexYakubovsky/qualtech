@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import {mediaBreakpoints as sizes} from '@/constants/index'
 import useEvent from '@/hooks/useEvent'
 
 const useWindowSize = () => {
@@ -7,16 +8,6 @@ const useWindowSize = () => {
 		width: undefined,
 		height: undefined
 	})
-
-	const sizes = {
-		xxs: 0,
-		xs: 375,
-		sm: 576,
-		md: 768,
-		lg: 992,
-		xl: 1200,
-		xxl: 1400
-	}
 
 	const setCurrentSize = (width) => {
 		if (sizes.xs <= width && width < sizes.sm) setSize('xs')
