@@ -2,23 +2,32 @@
 
 .header
   position: fixed
-  height: 85px
+  height: 55px
   width: 100%
   z-index: 9
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 35px 50px 0
+  padding: 20px 20px 0
   transition: .3s
+  background: $black
+  flex-direction: row-reverse
+  @media (min-width: $md)
+    padding: 35px 50px 0
+    height: 85px
+    background: none
+    flex-direction: row
 
   &.scroll
-    height: 80px
-    background: $black
-    padding: 0 50px 0
     box-shadow: 0 1px 3px #0000004a
+    padding: 0 20px 0
+    @media (min-width: $md)
+      height: 80px
+      background: $black
+      padding: 0 50px 0
 
-    .toggle-menu
-      top: 35%
+      .toggle-menu
+        top: 35%
 
 
   &__logo
@@ -92,35 +101,54 @@
 
     .toggle-menu
       display: inline-block
-      position: absolute
-      width: 80px
-      height: 25px
+      position: relative
+      width: 45px
+      height: 20px
       cursor: pointer
-      left: 50%
-      transform: translateX(-50%)
       top: 50%
       transition: .3s
+      z-index: 2
+      @media (min-width: $md)
+        transform: translateX(-50%)
+        position: absolute
+        width: 80px
+        left: 50%
+        height: 25px
 
       span
         transition: all .5s
         position: absolute
         left: 0
         width: 100%
-        height: 4px
+        height: 3px
         background-color: $white
+        @media (min-width: $md)
+          height: 4px
 
         &:nth-of-type(1)
-          bottom: 15px
+          bottom: 10px
+          @media (min-width: $md)
+            bottom: 15px
 
         &:nth-of-type(2)
-          bottom: 0
+          bottom: -5px
+          @media (min-width: $md)
+            bottom: 0
 
-      &:hover
+      &:active
         span
           background: $gray
 
           &:nth-of-type(1)
             width: 65%
+
+      &:hover
+        @media (min-width: $md)
+          span
+            background: $gray
+
+            &:nth-of-type(1)
+              width: 65%
 
       &.open
         span

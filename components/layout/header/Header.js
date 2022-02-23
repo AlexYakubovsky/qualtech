@@ -5,7 +5,7 @@ import useEvent from '@/hooks/useEvent'
 import useOverflow from '@/hooks/useOverflow'
 import MenuToggle from './MenuToggle'
 import Menu from './Menu'
-import { Text, Button } from '@/components/ui'
+import { Text, Button, Screen } from '@/components/ui'
 import styles from './header.module.sass'
 
 export default function Header() {
@@ -84,7 +84,7 @@ export default function Header() {
 			animate={isOpen ? 'open' : 'closed'}
 		>
 			<div className={styles.header__logo}>
-				<Text size='xl' style={{ lineHeight: '31px' }}>Разработка сайтов</Text>
+				<Text size='xl'>Разработка сайтов</Text>
 			</div>
 
 			<nav className={styles.header__nav}>
@@ -93,25 +93,26 @@ export default function Header() {
 				<MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
 			</nav>
 
-			<div className={styles.header__buttons}>
-				<motion.div variants={variantsFormButton}>
-					<Button size='md' iconRight='plus' style={{ marginRight: 30 }}>
-						Оставить заявку
-					</Button>
-				</motion.div>
-				<motion.div variants={variantsCallbackButton}>
-					<Button
-						as='link'
-						href={`tel:${contacts.phone}`}
-						size='md'
-						view='callback'
-						iconRight='phone'
-					>
-						{contacts.phone}
-					</Button>
-				</motion.div>
-
-			</div>
+			<Screen size='lg'>
+				<div className={styles.header__buttons}>
+					<motion.div variants={variantsFormButton}>
+						<Button size='md' iconRight='plus' style={{ marginRight: 30 }}>
+							Оставить заявку
+						</Button>
+					</motion.div>
+					<motion.div variants={variantsCallbackButton}>
+						<Button
+							as='link'
+							href={`tel:${contacts.phone}`}
+							size='md'
+							view='callback'
+							iconRight='phone'
+						>
+							{contacts.phone}
+						</Button>
+					</motion.div>
+				</div>
+			</Screen>
 		</motion.header>
 	)
 }
