@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, FreeMode, EffectFade } from 'swiper'
+import { Navigation, Pagination, FreeMode, EffectFade, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -22,6 +22,9 @@ const Carousel = ({ children, ...rest }) => {
 		if (rest.effect === 'fade') {
 			modulesList.push(EffectFade)
 		}
+	}
+	if (rest.autoplay) {
+		modulesList.push(Autoplay)
 	}
 
 	return (

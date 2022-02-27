@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from '@/components/Link'
+import { Icon } from '../icon'
 import styles from './button.module.sass'
-import Icon from '@/components/ui/icon/Icon'
 
 const Button = ({
 	children,

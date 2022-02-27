@@ -12,6 +12,24 @@ html, body
   font-weight: 400
 
 
+//swiper
+.swiper
+  padding-bottom: 80px !important
+
+.swiper-slide:not(.swiper-slide-active)
+  opacity: 0 !important
+
+.swiper-pagination-bullet
+  background: $dark-gray !important
+  width: 21px !important
+  height: 21px !important
+  opacity: 1 !important
+  margin: 0 9px !important
+
+  &.swiper-pagination-bullet-active
+    background: #555B5F!important
+
+
 .mt-30
   margin-top: 30px
 
@@ -25,6 +43,10 @@ html, body
 
   &-stretch
     align-items: stretch
+
+
+.section
+  padding: 100px 0
 
 
 .container

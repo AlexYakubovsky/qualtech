@@ -1,11 +1,10 @@
 import Layout from '@/components/layout'
-import Main from '@/components/sections/main/Main'
-// import { Main } from '@/components/sections'
+import Banners from '@/components/sections/banners/Banners'
 
 export default function Index() {
 	return (
 		<Layout>
-			<Main />
+			<Banners />
 		</Layout>
 	)
 }

@@ -16,7 +16,7 @@ export default function Header() {
 	useEffect(() => {
 		isOpen && handlerOverflow(true)
 		return () => handlerOverflow(false)
-	}, [isOpen])
+	}, [isOpen, handlerOverflow])
 
 	const variantsBackground = {
 		open: (height = 1000) => ({

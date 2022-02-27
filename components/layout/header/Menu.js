@@ -20,6 +20,10 @@ export default function Menu() {
 		open: {
 			overflowY: 'auto',
 			overflowX: 'hidden',
+			visibility: 'visible'
+		},
+		closed: {
+			visibility: 'hidden'
 		}
 	}
 

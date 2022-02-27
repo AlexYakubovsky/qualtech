@@ -9,7 +9,7 @@ export default function MenuItem({ title, isMenuOnHover, toggleHover }) {
 	useEffect(() => {
 		onTagHover && toggleHover(true)
 		return () => toggleHover(false)
-	}, [onTagHover])
+	}, [onTagHover, toggleHover])
 
 	const variants = {
 		open: {
