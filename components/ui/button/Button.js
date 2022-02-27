@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import Link from '@/components/Link'
 import { Icon } from '../icon'
 import styles from './button.module.sass'
@@ -18,25 +19,21 @@ const Button = ({
 	iconRight,
 	...props
 }) => {
-	let classList = ''
-
-	if (view) {
-		classList = `${classList} ${styles[view]}`
-	}
-	if (size) {
-		classList = `${classList} ${styles[size]}`
-	}
-	if (fluid) {
-		classList = `${classList} ${styles.isFluid}`
-	}
-
-	const cn = className.concat(' ', classList || '').trim()
+	const classNames = cn(
+		styles.button,
+		styles[view],
+		styles[size],
+		{
+			[styles.isFluid]: fluid
+		},
+		className
+	)
 
 	return as === 'link' ? (
 		<Link
 			href={href}
 			style={style}
-			className={`${styles.button} ${cn}`}
+			className={classNames}
 			disabled={disabled}
 			activeClassName={styles.active}
 		>
@@ -48,7 +45,7 @@ const Button = ({
 	) : (
 		<button
 			style={style}
-			className={`${styles.button} ${cn}`}
+			className={classNames}
 			type={type}
 			disabled={disabled}
 			onClick={!disabled ? onClick : () => {}}

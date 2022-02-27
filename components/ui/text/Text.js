@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import styles from './text.module.sass'
 
 const Text = ({
@@ -13,29 +14,20 @@ const Text = ({
 	children,
 	...props
 }) => {
-	let classList = ''
-
-	if (size) {
-		classList = `${classList} ${styles['text-' + size]}`
-	}
-	if (color) {
-		classList = `${classList} ${styles['color-' + color]}`
-	}
-	if (align) {
-		classList = `${classList} ${styles['text-' + align]}`
-	}
-	if (weight) {
-		classList = `${classList} ${styles['text-' + weight]}`
-	}
-	if (overflow) {
-		classList = `${classList} ${styles['text-overflow-' + overflow]}`
-	}
-
-	const cn = className.concat(' ', classList || '').trim()
+	const classList = cn(
+		{
+			[styles['text-' + size]]: size,
+			[styles['color-' + color]]: color,
+			[styles['text-' + align]]: align,
+			[styles['text-' + weight]]: weight,
+			[styles['text-overflow-' + overflow]]: overflow
+		},
+		className
+	)
 
 	return (
 		<ElementType
-			className={cn}
+			className={classList}
 			style={style}
 			{...props}
 		>

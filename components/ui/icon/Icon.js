@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import styles from './icon.module.sass'
 
 const Icon = ({
@@ -12,25 +13,22 @@ const Icon = ({
 	hoverColor,
 	...props
 }) => {
-	let classList = ''
-
-	if (color) {
-		classList = `${classList} ${styles[color]}`
-	}
-	if (size) {
-		classList = `${classList} ${styles[size]}`
-	}
-	if (hoverColor) {
-		classList = `${classList} ${styles.hover} ${styles[`hover-${hoverColor}`]}`
-	}
-
-	const cn = className.concat(' ', classList || '').trim()
+	const classNames = cn(
+		'icon-' + name,
+		{
+			[styles[color]]: color,
+			[styles[size]]: size,
+			[styles.hover]: hoverColor,
+			[styles['hover-' + hoverColor]]: hoverColor
+		},
+		className
+	)
 
 	if (!name) return null
 
 	return (
 		<i
-			className={`${'icon-' + name} ${cn}`}
+			className={classNames}
 			style={style}
 			title={title}
 			{...props}
