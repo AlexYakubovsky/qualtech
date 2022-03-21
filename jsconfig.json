@@ -6,7 +6,8 @@
       "@/components/*": ["components/*"],
       "@/constants/*": ["constants/*"],
       "@/context/*": ["context/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/hooks/*": ["hooks/*"],
+      "@/images/*": ["public/images/*"]
     }
   },
   "exclude": ["node_modules"]

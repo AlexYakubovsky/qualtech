@@ -37,7 +37,7 @@ export default function MenuItem({ title, isMenuOnHover, toggleHover }) {
 			onMouseEnter={() => setOnTagHover(true)}
 			onMouseLeave={() => setOnTagHover(false)}
 		>
-			<Text size='xxl'>{title}</Text>
+			<Text style={{fontSize: 100, lineHeight: '105px'}}>{title}</Text>
 		</motion.li>
 	)
 }

@@ -1,5 +1,1 @@
-import Text from './Text'
-
-module.exports = {
-	Text
-}
+export { default as Text } from './Text'

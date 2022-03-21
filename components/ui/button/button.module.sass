@@ -3,7 +3,7 @@
 .button
   border: 2.5px solid transparent
   border-radius: 15px
-  font-family: $font-primary
+  font-family: $font-secondary
   cursor: pointer
   transition: all .2s linear
   position: relative
@@ -15,6 +15,7 @@
   outline: 0
   padding: 10px
   font-weight: 700
+  letter-spacing: 0.025em
 
   &:disabled
     cursor: default
@@ -26,7 +27,13 @@
   background: $yellow
   color: $black
 
+.secondary
+  border-color: $blue
+  background: $blue
+  color: $black
+
 .callback
+  font-family: $font-primary
   border-color: $white
   color: $white
   font-weight: 500

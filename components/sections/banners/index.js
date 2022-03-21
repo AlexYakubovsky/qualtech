@@ -1,5 +1,1 @@
-import Banners from './Banners'
-
-module.exports = {
-	Banners
-}
+export { default as Banners } from './Banners'

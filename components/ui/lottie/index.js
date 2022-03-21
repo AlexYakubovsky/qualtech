@@ -1,5 +1,1 @@
-import Lottie from './Lottie'
-
-module.exports = {
-	Lottie
-}
+export { default as Lottie } from './Lottie'

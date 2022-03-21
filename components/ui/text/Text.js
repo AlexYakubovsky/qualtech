@@ -12,6 +12,7 @@ const Text = ({
 	className = '',
 	style,
 	children,
+	view,
 	...props
 }) => {
 	const classList = cn(
@@ -20,7 +21,8 @@ const Text = ({
 			[styles['color-' + color]]: color,
 			[styles['text-' + align]]: align,
 			[styles['text-' + weight]]: weight,
-			[styles['text-overflow-' + overflow]]: overflow
+			[styles['text-overflow-' + overflow]]: overflow,
+			[styles['text-' + view]]: view
 		},
 		className
 	)
@@ -43,12 +45,13 @@ Text.defaultProps = {
 Text.propTypes = {
 	as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'li', 'b', 'i', 'small', 'strong']),
 	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm']),
-	color: PropTypes.oneOf(['primary', 'green']),
+	color: PropTypes.oneOf(['primary', 'green', 'black']),
 	align: PropTypes.oneOf(['start', 'end', 'center', 'justify']),
 	weight: PropTypes.oneOf(['bold', 'light', 'medium', 'regular']),
 	overflow: PropTypes.oneOf(['fade', 'ellipsis']),
 	className: PropTypes.string,
-	style: PropTypes.shape({})
+	style: PropTypes.shape({}),
+	view: PropTypes.oneOf(['seo', 'ticker']),
 }
 
 export default Text

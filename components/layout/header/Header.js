@@ -59,11 +59,6 @@ export default function Header() {
 		}
 	}
 
-	const variantsCallbackButton = {
-		open: { x: 5 },
-		close: { x: 0 }
-	}
-
 	const handlerHeaderPosition = () => {
 		const distanceY = window.pageYOffset || document.documentElement.scrollTop
 
@@ -100,17 +95,15 @@ export default function Header() {
 							Оставить заявку
 						</Button>
 					</motion.div>
-					<motion.div variants={variantsCallbackButton}>
-						<Button
-							as='link'
-							href={`tel:${contacts.phone}`}
-							size='md'
-							view='callback'
-							iconRight='phone'
-						>
-							{contacts.phone}
-						</Button>
-					</motion.div>
+					<Button
+						as='link'
+						href={`tel:${contacts.phone}`}
+						size='md'
+						view='callback'
+						iconRight='phone'
+					>
+						{contacts.phone}
+					</Button>
 				</div>
 			</Screen>
 		</motion.header>

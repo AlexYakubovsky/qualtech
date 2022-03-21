@@ -1,5 +1,1 @@
-import Screen from './Screen'
-
-module.exports = {
-	Screen
-}
+export { default as Screen } from './Screen'

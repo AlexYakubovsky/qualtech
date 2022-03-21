@@ -1,5 +1,1 @@
-import Icon from './Icon'
-
-module.exports = {
-	Icon
-}
+export { default as Icon } from './Icon'

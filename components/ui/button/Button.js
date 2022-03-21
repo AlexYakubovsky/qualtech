@@ -69,7 +69,7 @@ Button.defaultProps = {
 Button.propTypes = {
 	as: PropTypes.string,
 	size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm']),
-	view: PropTypes.oneOf(['primary', 'callback']),
+	view: PropTypes.oneOf(['primary', 'secondary', 'callback']),
 	className: PropTypes.string,
 	fluid: PropTypes.bool,
 	disabled: PropTypes.bool,
