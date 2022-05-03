@@ -1,18 +1,26 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import s from './style.module.scss'
 
 const Section = ({
 	children,
-	className = '',
+	className,
 	style,
 	first,
+	p0,
+	pt0,
+	pb0,
 	backgroundImg,
 	...rest
 }) => {
 	const classNames = cn(
-		'section',
+		s.section,
 		{
-			'section-first': first
+			[s['section-first']]: first,
+			[s.p0]: p0,
+			[s.pt0]: pt0,
+			[s.pb0]: pb0
 		},
 		className
 	)
@@ -20,7 +28,7 @@ const Section = ({
 	if (backgroundImg) {
 		style = {
 			...style,
-			backgroundImage: `url(${backgroundImg.src})`
+			backgroundImage: `url(${backgroundImg})`
 		}
 	}
 
@@ -39,6 +47,9 @@ Section.propTypes = {
 	className: PropTypes.string,
 	style: PropTypes.shape({}),
 	first: PropTypes.bool,
+	p0: PropTypes.bool,
+	pt0: PropTypes.bool,
+	pb0: PropTypes.bool,
 	backgroundImg: PropTypes.any
 }
 

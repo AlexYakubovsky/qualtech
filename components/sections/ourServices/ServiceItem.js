@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import Image from 'next/image'
-import Text from '@/components/ui/text/Text'
+import Text from 'components/ui/text/Text'
 import styles from './our-services.module.sass'
 
 const ServiceItem = ({

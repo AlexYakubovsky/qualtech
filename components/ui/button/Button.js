@@ -1,45 +1,46 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import Link from '@/components/Link'
+import Link from 'components/Link'
 import { Icon } from '../icon'
-import styles from './button.module.sass'
+import s from './style.module.scss'
 
 const Button = ({
+	as: ElementType = 'button',
 	children,
-	as,
+	className,
+	style,
 	size,
 	view,
-	className = '',
 	fluid,
 	disabled,
 	type,
 	onClick,
-	style,
 	href,
 	iconRight,
 	...props
 }) => {
 	const classNames = cn(
-		styles.button,
-		styles[view],
-		styles[size],
+		s.button,
+		s[view],
+		s[size],
 		{
-			[styles.isFluid]: fluid
+			[s.isFluid]: fluid
 		},
 		className
 	)
 
-	return as === 'link' ? (
+	return ElementType === 'a' ? (
 		<Link
 			href={href}
 			style={style}
 			className={classNames}
 			disabled={disabled}
-			activeClassName={styles.active}
+			activeClassName={s.active}
 		>
 			<a>
 				{children}
-				{iconRight && <Icon name={iconRight} size='md' style={{ marginLeft: 14 }}></Icon>}
+				{iconRight && <Icon name={iconRight} size='md' style={{ marginLeft: 14 }}/>}
 			</a>
 		</Link>
 	) : (
@@ -58,7 +59,6 @@ const Button = ({
 }
 
 Button.defaultProps = {
-	as: 'button',
 	size: 'lg',
 	view: 'primary',
 	fluid: false,
@@ -67,10 +67,11 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-	as: PropTypes.string,
+	as: PropTypes.oneOf(['button', 'span', 'div', 'a']),
+	className: PropTypes.string,
+	style: PropTypes.shape({}),
 	size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm']),
 	view: PropTypes.oneOf(['primary', 'secondary', 'callback']),
-	className: PropTypes.string,
 	fluid: PropTypes.bool,
 	disabled: PropTypes.bool,
 	type: PropTypes.string,

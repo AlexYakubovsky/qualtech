@@ -1,0 +1,75 @@
+@import 'styles/variables';
+
+.button {
+  position: relative;
+  font-family: $font-secondary;
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 700;
+  padding: 8px;
+  transition: all .2ms linear;
+  transition-property: color, background, box-shadow, border-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  cursor: pointer;
+  outline: 0;
+  border: 2.5px solid transparent;
+  border-radius: 10px;
+  background-color: transparent;
+  vertical-align: middle;
+  appearance: none;
+  letter-spacing: 0.025em;
+  @media (min-width: $sm) {
+    border-radius: 15px;
+    font-size: 24px;
+    line-height: 33px;
+    padding: 10px;
+  }
+
+  &:disabled {
+    cursor: default;
+    box-shadow: none;
+  }
+
+  &.primary {
+    border-color: $yellow;
+    background: $yellow;
+    color: $black;
+  }
+
+  &.secondary {
+    border-color: $blue;
+    background: $blue;
+    color: $black;
+  }
+
+  &.callback {
+    font-family: $font-primary;
+    border-color: $white;
+    color: $white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  &.md {
+    min-height: 50px;
+    width: 250px;
+    @media (min-width: $lg) {
+      min-height: 45px;
+      padding: 5px 10px;
+    }
+  }
+
+  &.lg {
+    height: 70px;
+    width: 410px;
+  }
+
+  &.isFluid {
+    width: 100%;
+  }
+}

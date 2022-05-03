@@ -1,5 +1,1 @@
-import Header from './Header'
-
-module.exports = {
-	Header
-}
+export { default as Header } from './Header'

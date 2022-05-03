@@ -1,9 +1,16 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
 import { motion } from 'framer-motion'
-import { Text } from '@/components/ui'
-import styles from './header.module.sass'
+import { Text } from 'components/ui'
+import s from './header.module.scss'
 
-export default function MenuItem({ title, isMenuOnHover, toggleHover }) {
+const MenuItem = ({
+	title,
+	link,
+	isMenuOnHover,
+	toggleHover
+}) => {
 	const [onTagHover, setOnTagHover] = useState(false)
 
 	useEffect(() => {
@@ -33,11 +40,20 @@ export default function MenuItem({ title, isMenuOnHover, toggleHover }) {
 	return (
 		<motion.li
 			variants={variants}
-			className={`${styles['menu-item']} ${isMenuOnHover ? styles.onHover : ''}`}
+			className={cn(s['menu-item'], {[s.onHover]: isMenuOnHover})}
 			onMouseEnter={() => setOnTagHover(true)}
 			onMouseLeave={() => setOnTagHover(false)}
 		>
-			<Text style={{fontSize: 100, lineHeight: '105px'}}>{title}</Text>
+			<Text>{title}</Text>
 		</motion.li>
 	)
 }
+
+MenuItem.propTypes = {
+	title: PropTypes.string.isRequired,
+	link: PropTypes.string.isRequired,
+	isMenuOnHover: PropTypes.bool.isRequired,
+	toggleHover: PropTypes.func.isRequired,
+}
+
+export default MenuItem

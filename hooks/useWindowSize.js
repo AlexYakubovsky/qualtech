@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react'
-import {mediaBreakpoints as sizes} from '@/constants/index'
-import useEvent from '@/hooks/useEvent'
+import { mediaBreakpoints as sizes } from 'constants/grid'
+import useEvent from 'hooks/useEvent'
 
 const useWindowSize = () => {
-	const [size, setSize] = useState('xxs')
+	const [size, setSize] = useState('')
+	const [deviceWidth, setDeviceWidth] = useState('')
 	const [windowSize, setWindowSize] = useState({
 		width: undefined,
 		height: undefined
 	})
+
+	useEffect(() => {
+		if (size === 'xxs' || size === 'xs') setDeviceWidth('small')
+		if (size === 'sm' || size === 'md') setDeviceWidth('medium')
+		if (size === 'lg' || size === 'xl' || size === 'xxl') setDeviceWidth('large')
+	}, [size, setDeviceWidth])
 
 	const setCurrentSize = (width) => {
 		if (sizes.xs <= width && width < sizes.sm) setSize('xs')
@@ -27,7 +34,7 @@ const useWindowSize = () => {
 	useEffect(() => handleResize(), [])
 	useEvent('resize', handleResize)
 
-	return { ...windowSize, size }
+	return { ...windowSize, size, deviceWidth }
 }
 
 export default useWindowSize

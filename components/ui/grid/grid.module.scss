@@ -1,0 +1,206 @@
+@use 'sass:map';
+@import 'styles/variables';
+
+$columns: 12 !default;
+$gap: 20px !default;
+$breakpoints: (
+        xs: (
+                'screen': 576px,
+                'container': 540px,
+        ),
+        sm: (
+                'screen': 768px,
+                'container': 720px,
+        ),
+        md: (
+                'screen': 992px,
+                'container': 960px,
+        ),
+        lg: (
+                'screen': 1200px,
+                'container': 1140px,
+        ),
+        xl: (
+                'screen': 1400px,
+                'container': 1250px,
+        ),
+        xxl: (
+                'screen': 1800px,
+                'container': 1480px,
+        ),
+) !default;
+
+@mixin create-flex-cols($breakpoint: null) {
+  $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+
+  @for $i from 1 through $columns {
+    .col#{$infix}-#{$i} {
+      flex: 0 0 #{100% / $columns * $i};
+      max-width: #{100% / $columns * $i};
+    }
+    .offset#{$infix}-#{$i} {
+      margin-left: #{(100% / $columns) * $i};
+    }
+    .order-#{$infix}-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gap;
+  padding-right: $gap;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gap;
+  margin-right: -$gap;
+
+  &.row-10 > * {
+    margin-bottom: 10px;
+  }
+
+  &.row-20 > * {
+    margin-bottom: 20px;
+  }
+
+  &.row-30 > * {
+    margin-bottom: 30px;
+  }
+
+  &.row-40 > * {
+    margin-bottom: 40px;
+  }
+}
+
+[class*='col-'] {
+  position: relative;
+  padding-left: $gap;
+  padding-right: $gap;
+  width: 100%
+}
+
+.offset-top-10 {
+  margin-top: 10px;
+}
+
+.offset-top-20 {
+  margin-top: 20px;
+}
+
+.offset-top-30 {
+  margin-top: 30px;
+}
+
+.offset-top-80 {
+  margin-top: 80px;
+}
+
+.offset-xxl-top-100 {
+  margin-top: 100px;
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: map.get($width, 'screen')) {
+    @if ($breakpoint == 'xs') {
+      .grid {
+        grid-gap: $gap;
+      }
+    }
+    .container {
+      max-width: map.get($width, 'container') + ($gap * 2);
+      //@if ($breakpoint == 'sm') {
+      //  padding-left: $gap;
+      //  padding-right: $gap;
+      //}
+    }
+  }
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: map.get($width, 'screen')) {
+    @include create-flex-cols($breakpoint);
+  }
+}
+
+//grid cols
+
+//@mixin create-grid-cols($breakpoint: null) {
+//  $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+//
+//  @for $i from 0 through $columns {
+//    @if $i == 0 {
+//      .col#{$infix}-offset-#{$i} {
+//        grid-column-start: auto;
+//      }
+//      .row#{$infix}-offset-#{$i} {
+//        grid-row-start: auto;
+//      }
+//      .col#{$infix}-order-#{$i} {
+//        order: 0;
+//      }
+//    } @else {
+//      .col#{$infix}-#{$i} {
+//        grid-column-end: span $i;
+//      }
+//      .col#{$infix}-offset-#{$i} {
+//        grid-column-start: $i + 1;
+//      }
+//      .row#{$infix}-#{$i} {
+//        grid-row-end: span $i;
+//      }
+//      .row#{$infix}-offset-#{$i} {
+//        grid-row-start: $i + 1;
+//      }
+//      .col#{$infix}-order-#{$i} {
+//        order: $i;
+//      }
+//    }
+//  }
+//}
+
+//@include create-grid-cols;
+//
+//@each $breakpoint, $width in $breakpoints {
+//  @media (min-width: map.get($width, 'screen')) {
+//    @include create-grid-cols($breakpoint);
+//  }
+//}

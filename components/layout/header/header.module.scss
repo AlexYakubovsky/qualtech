@@ -1,0 +1,306 @@
+@import 'styles/variables';
+
+.header {
+  position: fixed;
+  height: 55px;
+  width: 100vw;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0;
+  transition: .3s;
+  background: $black;
+  flex-direction: row-reverse;
+  @media (min-width: $lg) {
+    padding: 40px 50px 0;
+    height: 85px;
+    background: none;
+    flex-direction: row;
+  }
+
+  &.scroll {
+    box-shadow: 0 1px 3px #0000004a;
+    padding: 0 20px 0;
+    @media (min-width: $sm) {
+      height: 80px;
+      background: $black;
+      padding: 0 50px 0;
+
+      .toggle-menu {
+        top: 35%;
+      }
+    }
+  }
+
+  &__logo {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+    .logo-img {
+      position: relative;
+      height: 28px;
+      width: 28px;
+      margin-right: 3px;
+      @media (min-width: $sm) {
+        margin-right: 13px;
+        height: 37px;
+        width: 37px;
+      }
+      @media (min-width: $lg) {
+        height: 52px;
+        width: 52px;
+      }
+    }
+  }
+
+  &__nav {
+    &-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      background: $black;
+    }
+
+    .menu {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 100px;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      &-wrapper {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        @media (min-width: $lg) {
+          padding: 50px 50px 20px;
+        }
+      }
+
+      &__nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media (min-width: $lg) {
+          height: 100%;
+          text-align: end;
+          align-items: flex-end;
+        }
+
+        .menu-item {
+          margin-bottom: 25px;
+          display: inline-block;
+          position: relative;
+          transition: .8s;
+          @media (min-width: $lg) {
+            margin-bottom: 40px;
+          }
+
+          span {
+            transition: .8s;
+            font-size: 36px;
+            line-height: 36px;
+            @media (min-width: $sm) {
+              font-size: 50px;
+              line-height: 55px;
+            }
+            @media (min-width: $lg) {
+              font-size: 100px;
+              line-height: 105px;
+            }
+          }
+
+          &.onHover {
+            span {
+              color: $dark-gray;
+            }
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 3px;
+            background: $white;
+            margin-top: 5px;
+            transition: width .8s;
+            @media (min-width: $lg) {
+              height: 6px;
+              margin-top: 15px;
+            }
+          }
+
+          &:hover {
+            span {
+              color: $white;
+            }
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &__footer {
+        padding-top: 14px;
+        padding-bottom: 30px;
+        border-top: 2px solid $white;
+        @media (min-width: $lg) {
+          padding-top: 40px;
+        }
+
+        li {
+          font-size: 12px;
+          line-height: 17px;
+          @media (min-width: $sm) {
+            font-size: 18px;
+            line-height: 25px;
+          }
+        }
+      }
+
+      &__buttons-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        flex-direction: column;
+        margin-bottom: 20px;
+        @media (min-width: $sm) {
+          flex-direction: row;
+        }
+
+        button {
+          &:not(:last-child) {
+            margin-bottom: 15px;
+            @media (min-width: $sm) {
+              margin-bottom: 0;
+              margin-right: 20px;
+            }
+          }
+
+          &.apply-button {
+            @media (min-width: $sm) {
+              font-size: 18px;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+
+    .toggle-menu {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 20px;
+      cursor: pointer;
+      top: 50%;
+      transition: .3s;
+      z-index: 2;
+      @media (min-width: $lg) {
+        transform: translateX(-50%);
+        position: absolute;
+        width: 80px;
+        left: 50%;
+        height: 25px;
+      }
+
+      span {
+        transition: all .5s;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $white;
+        @media (min-width: $lg) {
+          height: 4px;
+        }
+
+        &:nth-of-type(1) {
+          bottom: 10px;
+          @media (min-width: $lg) {
+            bottom: 15px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          bottom: -5px;
+          @media (min-width: $lg) {
+            bottom: 0;
+          }
+        }
+      }
+
+      &:active {
+        span {
+          background: $gray;
+
+          &:nth-of-type(1) {
+            width: 65%;
+          }
+        }
+      }
+
+      &:hover {
+        @media (min-width: $lg) {
+          span {
+            background: $gray;
+
+            &:nth-of-type(1) {
+              width: 65%;
+            }
+          }
+        }
+      }
+
+      &.open {
+        span {
+          &:nth-of-type(1) {
+            transform: translate(0px, 5px) rotate(-45deg);
+          }
+
+          &:nth-of-type(2) {
+            transform: translate(0, -10px) rotate(45deg);
+          }
+        }
+
+        &:hover {
+          span {
+            &:nth-of-type(1) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    z-index: 1;
+    display: flex;
+
+    .apply-button {
+      margin-right: 10px;
+      font-size: 18px;
+      line-height: 25px;
+      @media (min-width: $xl) {
+        margin-right: 30px;
+      }
+    }
+  }
+}

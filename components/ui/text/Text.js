@@ -1,28 +1,38 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import styles from './text.module.sass'
+import s from './style.module.scss'
 
 const Text = ({
+	children,
 	as: ElementType = 'span',
+	className,
+	style,
 	size,
 	color,
 	align,
 	weight,
 	overflow,
-	className = '',
-	style,
-	children,
+	transform,
+	decoration,
+	whiteSpace,
+	cursor,
 	view,
 	...props
 }) => {
 	const classList = cn(
+		s.text,
 		{
-			[styles['text-' + size]]: size,
-			[styles['color-' + color]]: color,
-			[styles['text-' + align]]: align,
-			[styles['text-' + weight]]: weight,
-			[styles['text-overflow-' + overflow]]: overflow,
-			[styles['text-' + view]]: view
+			[s['text-' + size]]: size,
+			[s['color-' + color]]: color,
+			[s['text-' + align]]: align,
+			[s['text-' + weight]]: weight,
+			[s['text-overflow-' + overflow]]: overflow,
+			[s['text-transform-' + transform]]: transform,
+			[s['text-decoration-' + decoration]]: decoration,
+			[s['white-space-' + whiteSpace]]: whiteSpace,
+			[s['cursor-' + cursor]]: cursor,
+			[s['text-' + view]]: view
 		},
 		className
 	)
@@ -44,14 +54,18 @@ Text.defaultProps = {
 
 Text.propTypes = {
 	as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'li', 'b', 'i', 'small', 'strong']),
+	className: PropTypes.string,
+	style: PropTypes.shape({}),
 	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm']),
 	color: PropTypes.oneOf(['primary', 'green', 'black']),
 	align: PropTypes.oneOf(['start', 'end', 'center', 'justify']),
-	weight: PropTypes.oneOf(['bold', 'light', 'medium', 'regular']),
+	weight: PropTypes.oneOf(['bold', 'medium', 'regular']),
 	overflow: PropTypes.oneOf(['fade', 'ellipsis']),
-	className: PropTypes.string,
-	style: PropTypes.shape({}),
-	view: PropTypes.oneOf(['seo', 'ticker']),
+	transform: PropTypes.oneOf(['lowercase', 'uppercase', 'capitalize']),
+	decoration: PropTypes.oneOf(['underline', 'line-through']),
+	whiteSpace: PropTypes.oneOf(['pre-line', 'nowrap']),
+	cursor: PropTypes.oneOf(['pointer']),
+	view: PropTypes.oneOf(['seo', 'ticker'])
 }
 
 export default Text

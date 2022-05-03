@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import styles from './icon.module.sass'
+import s from './style.module.scss'
 
 const Icon = ({
 	children,
-	className = '',
+	className,
+	style,
 	name,
 	size,
 	color,
-	style,
 	title,
 	hoverColor,
 	...props
@@ -16,10 +16,10 @@ const Icon = ({
 	const classNames = cn(
 		'icon-' + name,
 		{
-			[styles[color]]: color,
-			[styles[size]]: size,
-			[styles.hover]: hoverColor,
-			[styles['hover-' + hoverColor]]: hoverColor
+			[s[color]]: color,
+			[s[size]]: size,
+			[s.hover]: hoverColor,
+			[s['hover-' + hoverColor]]: hoverColor
 		},
 		className
 	)
@@ -32,19 +32,17 @@ const Icon = ({
 			style={style}
 			title={title}
 			{...props}
-		>
-			{children && <span className={styles.icon_text}>{children}</span>}
-		</i>
+		/>
 	)
 }
 
 Icon.propTypes = {
 	className: PropTypes.string,
+	style: PropTypes.shape({}),
 	name: PropTypes.string.isRequired,
 	size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm']),
 	color: PropTypes.oneOf(['white', 'gray']),
 	title: PropTypes.string,
-	style: PropTypes.object,
 	hoverColor: PropTypes.oneOf(['gray'])
 }
 

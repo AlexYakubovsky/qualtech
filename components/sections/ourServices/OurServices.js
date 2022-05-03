@@ -1,10 +1,10 @@
-import { Section, Text, Button } from '@/components/ui'
-import ServiceItem from '@/components/sections/ourServices/ServiceItem'
-import img from '@/images/backgrounds/1.png'
+import { Section, Text, Button } from 'components/ui'
+import ServiceItem from 'components/sections/ourServices/ServiceItem'
+import img from 'images/backgrounds/1.png'
 
 export default function OurServices() {
 	return (
-		<Section style={{ background: 'white' }} backgroundImg={img}>
+		<Section style={{ background: 'white' }} backgroundImg={img.src}>
 			<div className='container'>
 				<div className='row row-20 align-items-center'>
 					<div className='col-xl-6'>
@@ -36,8 +36,8 @@ export default function OurServices() {
 								footer='Интерактивные интернет-сервисы'
 							>
 								<Text as='p' size='sm'>
-									Многофункциональная площадка, совмещающая разнонаправленные группы сервисов или направлений
-									деятельности, объединенных единой концепцией
+									{`Многофункциональная площадка, совмещающая разнонаправленные группы сервисов
+									 или направлений деятельности, объединенных единой концепцией`}
 								</Text>
 							</ServiceItem>
 							<ServiceItem

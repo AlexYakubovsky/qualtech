@@ -1,0 +1,36 @@
+@import 'styles/variables';
+
+.white {
+  color: $white;
+}
+
+.gray {
+  color: $gray;
+}
+
+.xl {
+  font-size: 35px;
+}
+
+.lg {
+  font-size: 30px;
+}
+
+.md {
+  font-size: 22px;
+}
+
+.sm {
+  font-size: 20px;
+}
+
+.hover {
+  cursor: pointer;
+  transition: .2s;
+
+  &.hover-gray {
+    &:hover {
+      color: $gray;
+    }
+  }
+}

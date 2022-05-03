@@ -1,9 +1,11 @@
-import styles from './header.module.sass'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import s from './header.module.scss'
 
-export default function MenuToggle({ toggle, isOpen }) {
+const MenuToggle = ({ toggle, isOpen }) => {
 	return (
 		<div
-			className={`${styles['toggle-menu']} ${isOpen ? styles.open : ''}`}
+			className={cn(s['toggle-menu'], { [s.open]: isOpen })}
 			onClick={toggle}
 		>
 			<span />
@@ -11,3 +13,10 @@ export default function MenuToggle({ toggle, isOpen }) {
 		</div>
 	)
 }
+
+MenuToggle.propTypes = {
+	toggle: PropTypes.func.isRequired,
+	isOpen: PropTypes.bool.isRequired
+}
+
+export default MenuToggle

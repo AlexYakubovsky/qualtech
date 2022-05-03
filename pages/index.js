@@ -1,5 +1,6 @@
-import Layout from '@/components/layout'
-import { Banners, OurServices } from '@/components/sections'
+import React from 'react'
+import Layout from 'components/layout'
+import { Banners, OurServices } from 'components/sections'
 
 export default function Index() {
 	return (

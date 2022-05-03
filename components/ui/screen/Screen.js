@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { mediaBreakpoints } from '@/constants/index'
+import { mediaBreakpoints } from 'constants/grid'
 
 const Screen = ({ children, size, down }) => {
 	const [mounted, setMounted] = useState(false)
