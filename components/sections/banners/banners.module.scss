@@ -1,6 +1,13 @@
 @import "styles/variables";
 
-.banner {
+.banners {
+  margin-top: 40px;
+  @media (min-width: $sm) {
+    & > div {
+      padding-bottom: 45px;
+    }
+  }
+
   &__animation {
     width: 88%;
     margin-left: auto;

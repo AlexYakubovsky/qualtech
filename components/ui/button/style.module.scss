@@ -65,8 +65,12 @@
   }
 
   &.lg {
-    height: 70px;
-    width: 410px;
+    height: 50px;
+    width: 310px;
+    @media (min-width: $lg) {
+      height: 70px;
+      width: 410px;
+    }
   }
 
   &.isFluid {

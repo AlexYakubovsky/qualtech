@@ -43,22 +43,18 @@ export default function Banners() {
 						delay: 4500,
 						disableOnInteraction: false
 					}}
-					className='offset-top-40'
-					style={deviceWidth !== 'small'
-						? { paddingBottom: 45 }
-						: null
-					}
+					classNameWrapper={s.banners}
 				>
 					{banners.map((banner, i) => (
 						<SlideItem key={i}>
 							<Row row={20} align='center'>
 								<Col sm={6} order-sm={2}>
-									<div className={s['banner__animation']}>
+									<div className={s['banners__animation']}>
 										<Lottie path={banner.lottie} />
 									</div>
 								</Col>
 								<Col sm={6} order-sm={1}>
-									<div className={s['banner__text']}>
+									<div className={s['banners__text']}>
 										<Text as='h1'>{banner.title}</Text>
 										<Text as='p' className='offset-top-15 offset-sm-top-30' size='xl' whiteSpace='pre-line'>
 											{banner.text}

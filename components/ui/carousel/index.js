@@ -6,7 +6,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/free-mode'
 import 'swiper/css/effect-fade'
 
-const Carousel = ({ children, ...rest }) => {
+const Carousel = ({
+	children,
+	classNameWrapper,
+	...rest
+}) => {
 	const modulesList = []
 
 	if (rest.navigation) {
@@ -28,9 +32,11 @@ const Carousel = ({ children, ...rest }) => {
 	}
 
 	return (
-		<Swiper {...rest} modules={modulesList}>
-			{children}
-		</Swiper>
+		<div className={classNameWrapper}>
+			<Swiper {...rest} modules={modulesList}>
+				{children}
+			</Swiper>
+		</div>
 	)
 }
 
