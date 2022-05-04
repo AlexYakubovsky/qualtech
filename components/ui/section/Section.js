@@ -27,8 +27,11 @@ const Section = ({
 
 	if (backgroundImg) {
 		style = {
+			backgroundImage: `url(${backgroundImg})`,
+			backgroundRepeat: 'no-repeat',
+			backgroundPosition: 'center top',
+			backgroundSize: 'cover',
 			...style,
-			backgroundImage: `url(${backgroundImg})`
 		}
 	}
 

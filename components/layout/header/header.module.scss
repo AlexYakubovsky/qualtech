@@ -2,16 +2,19 @@
 
 .header {
   position: fixed;
-  height: 55px;
+  height: 60px;
   width: 100vw;
   z-index: 9;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0;
+  padding: 10px 20px;
   transition: .3s;
   background: $black;
   flex-direction: row-reverse;
+  @media (min-width: $sm) {
+    height: 70px;
+  }
   @media (min-width: $lg) {
     padding: 40px 50px 0;
     height: 85px;
@@ -21,15 +24,15 @@
 
   &.scroll {
     box-shadow: 0 1px 3px #0000004a;
-    padding: 0 20px 0;
+    background: $black;
     @media (min-width: $sm) {
-      height: 80px;
-      background: $black;
-      padding: 0 50px 0;
-
       .toggle-menu {
         top: 35%;
       }
+    }
+    @media (min-width: $lg) {
+      height: 80px;
+      padding: 0 50px 0;
     }
   }
 
@@ -157,10 +160,10 @@
 
       &__footer {
         padding-top: 14px;
-        padding-bottom: 30px;
         border-top: 2px solid $white;
         @media (min-width: $lg) {
           padding-top: 40px;
+          padding-bottom: 30px;
         }
 
         li {
@@ -239,10 +242,7 @@
         }
 
         &:nth-of-type(2) {
-          bottom: -5px;
-          @media (min-width: $lg) {
-            bottom: 0;
-          }
+          bottom: 0;
         }
       }
 
@@ -275,7 +275,10 @@
           }
 
           &:nth-of-type(2) {
-            transform: translate(0, -10px) rotate(45deg);
+            transform: translate(0, -5px) rotate(45deg);
+            @media (min-width: $lg) {
+              transform: translate(0, -10px) rotate(45deg);
+            }
           }
         }
 

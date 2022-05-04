@@ -1,21 +1,19 @@
 @import 'styles/variables';
 
-.swiper {
-  padding-bottom: 80px !important;
-}
-
 .swiper-slide:not(.swiper-slide-active) {
   opacity: 0 !important;
 }
 
-.swiper-pagination-bullet {
-  background: $dark-gray !important;
-  width: 21px !important;
-  height: 21px !important;
-  opacity: 1 !important;
-  margin: 0 9px !important;
+.swiper {
+  .swiper-pagination-bullet {
+    background: $dark-gray;
+    width: 21px;
+    height: 21px;
+    opacity: 1;
+    margin: 0 8.5px !important;
 
-  &.swiper-pagination-bullet-active {
-    background: #555B5F !important;
+    &.swiper-pagination-bullet-active {
+      background: #555B5F;
+    }
   }
 }

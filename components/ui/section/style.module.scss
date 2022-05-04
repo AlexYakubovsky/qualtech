@@ -1,5 +1,16 @@
+@import "styles/variables";
+
 .section {
-  padding: 100px 0;
+  padding-top:  40px;
+  padding-bottom: 25px;
+  @media (min-width: $sm) {
+    padding-top: 70px;
+    padding-bottom: 55px;
+  }
+  @media (min-width: $lg) {
+    padding-top: 100px;
+    padding-bottom: 85px;
+  }
 
   &.p0 {
     padding: 0;
@@ -11,9 +22,5 @@
 
   &.pb0 {
     padding-bottom: 0;
-  }
-
-  &.section-first {
-    padding-bottom: 65px
   }
 }

@@ -65,7 +65,7 @@ Text.propTypes = {
 	decoration: PropTypes.oneOf(['underline', 'line-through']),
 	whiteSpace: PropTypes.oneOf(['pre-line', 'nowrap']),
 	cursor: PropTypes.oneOf(['pointer']),
-	view: PropTypes.oneOf(['seo', 'ticker'])
+	view: PropTypes.oneOf(['seo'])
 }
 
 export default Text

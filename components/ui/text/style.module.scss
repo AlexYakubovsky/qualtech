@@ -12,19 +12,31 @@
     font-size: 18px;
     line-height: 21.5px;
     @media (min-width: $sm) {
-      font-size: 27px;
-      line-height: 37px;
+      font-size: 23px;
+      line-height: 30px;
     }
     @media (min-width: $lg) {
       letter-spacing: 0.001em;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @media (min-width: $xxl) {
       font-size: 36px;
       line-height: 43px;
     }
   }
 
   &.text-lg {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 18px;
+    line-height: 25px;
+    @media (min-width: $sm) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    @media (min-width: $lg) {
+      font-size: 24px;
+      line-height: 34px;
+    }
   }
 
   &.text-md {
@@ -38,11 +50,29 @@
   }
 }
 
-h1 {
+h1,
+.text-seo {
   &.text {
-    font-size: 96px;
-    line-height: 96px;
-    letter-spacing: 0.05em;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 700;
+    @media (min-width: $sm) {
+      font-size: 50px;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+    }
+    @media (min-width: $lg) {
+      font-size: 65px;
+      line-height: 65px;
+    }
+    @media (min-width: $xl) {
+      font-size: 78px;
+      line-height: 78px;
+    }
+    @media (min-width: $xxl) {
+      font-size: 96px;
+      line-height: 96px;
+    }
   }
 }
 
@@ -54,13 +84,22 @@ h2 {
   }
 }
 
+h6 {
+  &.text {
+    font-family: $font-secondary;
+    font-size: 36px;
+    line-height: 34px;
+    font-weight: 700;
+  }
+}
+
 .color-primary {
   color: $text-primary;
 }
 
 .color-green {
   color: $green;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .color-black {
@@ -152,18 +191,4 @@ h2 {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.text-seo {
-  font-size: 96px;
-  line-height: 96px;
-  letter-spacing: 0.05em;
-  font-weight: 700;
-}
-
-.text-title {
-  font-family: $font-secondary;
-  font-size: 36px;
-  line-height: 34px;
-  font-weight: 700;
 }

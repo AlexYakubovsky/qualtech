@@ -1,68 +1,85 @@
-import img from '@/images/backgrounds/0.png'
-import { Section, Carousel, SlideItem, Text, Button, Lottie } from '@/components/ui'
+import React from 'react'
+import useWindowsSize from 'hooks/useWindowSize'
+import { Section, Container, Row, Col, Carousel, SlideItem, Text, Button, Lottie } from 'components/ui'
+import img from 'images/backgrounds/0.svg'
+import s from './banners.module.scss'
 
 export default function Banners() {
+	const { deviceWidth } = useWindowsSize()
+	const banners = [
+		{
+			title: 'Разработка сайтов любой сложности',
+			text: `Мы разрабатываем сайты любого типа.\nОт лендинга до мультифункциональных информационных порталов`,
+			subTitle: 'Разработка под ключ',
+			button: 'Оставить заявку',
+			lottie: '/animations/banner-1.json'
+		},
+		{
+			title: 'Комплексный подход',
+			text: `Аналитика | UX/UI | Front-end | Back-end\nПродвижение | Техническая поддержка`,
+			subTitle: 'Международный формат',
+			button: 'Оставить заявку',
+			lottie: '/animations/banner-0.json'
+		},
+		{
+			title: 'Разработка мобильных приложений',
+			text: `Разработка приложений\nлюбой сложности`,
+			subTitle: 'Взаимодействие Swift с JavaScript',
+			button: 'Оставить заявку',
+			lottie: '/animations/banner-2.json'
+		}
+	]
+
 	return (
-		<Section backgroundImg={img} first>
-			<div className='container'>
+		<Section backgroundImg={img.src}>
+			<Container>
 				<Carousel
 					allowTouchMove={true}
 					effect='fade'
 					loop={true}
 					speed={1400}
-					pagination={{ clickable: true }}
+					pagination={deviceWidth !== 'small' && { clickable: true }}
 					autoplay={{
 						delay: 4500,
 						disableOnInteraction: false
 					}}
+					className='offset-top-40'
+					style={deviceWidth !== 'small'
+						? { paddingBottom: 45 }
+						: null
+					}
 				>
-					<SlideItem>
-						<div className='row row-20 align-items-center'>
-							<div className='col-xl-6'>
-								<Text as='h1'>Разработка сайтов любой сложности</Text>
-								<Text as='p' className='offset-top-30' size='xl'>
-									{`Мы разрабатываем сайты любого типа.\nОт лендинга до мультифункциональных информационных порталов`}
-								</Text>
-								<Text as='p' className='offset-top-30' size='lg' color='green' weight='bold'>Разработка под ключ</Text>
-								<Button size='lg' className='offset-xl-top-80'>Оставить заявку</Button>
-							</div>
-							<div className='col-xl-6'>
-								<Lottie path='/animations/banner-1.json' />
-							</div>
-						</div>
-					</SlideItem>
-					<SlideItem>
-						<div className='row row-20 align-items-center'>
-							<div className='col-xl-6'>
-								<Text view='seo'>Комплексный подход</Text>
-								<Text as='p' className='offset-top-30' size='xl'>
-									{`Аналитика | UX/UI | Front-end | Back-end\nПродвижение | Техническая поддержка`}
-								</Text>
-								<Text as='p' className='offset-top-30' size='lg' color='green' weight='bold'>Международный формат</Text>
-								<Button size='lg' className='offset-xl-top-80'>Оставить заявку</Button>
-							</div>
-							<div className='col-xl-6'>
-								<Lottie path='/animations/banner-0.json' />
-							</div>
-						</div>
-					</SlideItem>
-					<SlideItem>
-						<div className='row row-20 align-items-center'>
-							<div className='col-xl-6'>
-								<Text view='seo'>Разработка мобильных приложений</Text>
-								<Text as='p' className='offset-top-30' size='xl'>{`Разработка приложений\nлюбой сложности`}</Text>
-								<Text as='p' className='offset-top-30' size='lg' color='green' weight='bold'>
-									Взаимодействие Swift с JavaScript
-								</Text>
-								<Button size='lg' className='offset-xl-top-80'>Оставить заявку</Button>
-							</div>
-							<div className='col-xl-6'>
-								<Lottie path='/animations/banner-2.json' />
-							</div>
-						</div>
-					</SlideItem>
+					{banners.map((banner, i) => (
+						<SlideItem key={i}>
+							<Row row={20} align='center'>
+								<Col sm={6} order-sm={2}>
+									<div className={s['banner__animation']}>
+										<Lottie path={banner.lottie} />
+									</div>
+								</Col>
+								<Col sm={6} order-sm={1}>
+									<div className={s['banner__text']}>
+										<Text as='h1'>{banner.title}</Text>
+										<Text as='p' className='offset-top-15 offset-sm-top-30' size='xl' whiteSpace='pre-line'>
+											{banner.text}
+										</Text>
+										<Text as='p' className='offset-top-15 offset-sm-top-30' size='lg' color='green' weight='bold'>
+											{banner.subTitle}
+										</Text>
+									</div>
+									<Button
+										size='lg'
+										className='offset-top-15 offset-sm-top-50 offset-xl-top-80'
+										fluid={deviceWidth === 'small'}
+									>
+										{banner.button}
+									</Button>
+								</Col>
+							</Row>
+						</SlideItem>
+					))}
 				</Carousel>
-			</div>
+			</Container>
 		</Section>
 	)
 }

@@ -20,7 +20,11 @@ const Lottie = ({ path, ...props }) => {
 	}, [lottie, path])
 
 	return (
-		<div ref={lottieRef} {...props} />
+		<div
+			ref={lottieRef}
+			style={{ display: 'flex' }}
+			{...props}
+		/>
 	)
 }
 
