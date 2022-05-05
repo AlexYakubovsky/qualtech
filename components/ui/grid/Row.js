@@ -36,7 +36,7 @@ Row.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 	style: PropTypes.shape({}),
-	row: PropTypes.oneOf([10, 20, 30]),
+	row: PropTypes.oneOf([10, 15, 20, 30, 40]),
 	align: PropTypes.oneOf(['start', 'center', 'end']),
 	justify: PropTypes.oneOf([
 		'start',

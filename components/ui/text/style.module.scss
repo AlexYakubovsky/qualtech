@@ -50,8 +50,8 @@
   }
 }
 
-h1,
-.text-seo {
+h1 {
+  &.text-seo,
   &.text {
     font-size: 36px;
     line-height: 36px;
@@ -78,18 +78,43 @@ h1,
 
 h2 {
   &.text {
-    font-size: 84px;
-    line-height: 84px;
-    letter-spacing: 0.015em;
+    font-size: 34px;
+    line-height: 34px;
+    font-weight: 700;
+    @media (min-width: $sm) {
+      font-size: 46px;
+      line-height: 44px;
+      letter-spacing: 0.015em;
+    }
+    @media (min-width: $lg) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @media (min-width: $xl) {
+      font-size: 70px;
+      line-height: 70px;
+    }
+    @media (min-width: $xxl) {
+      font-size: 84px;
+      line-height: 84px;
+    }
   }
 }
 
 h6 {
   &.text {
-    font-family: $font-secondary;
-    font-size: 36px;
-    line-height: 34px;
+    font-family: $font-primary;
+    font-size: 28px;
+    line-height: 30px;
     font-weight: 700;
+    @media (min-width: $sm) {
+      font-size: 32px;
+      line-height: 32px;
+    }
+    @media (min-width: $lg) {
+      font-size: 36px;
+      line-height: 34px;
+    }
   }
 }
 
@@ -99,7 +124,7 @@ h6 {
 
 .color-green {
   color: $green;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
 }
 
 .color-black {
