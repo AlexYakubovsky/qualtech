@@ -26,7 +26,7 @@ const Container = ({
 	)
 }
 
-Container.propstype = {
+Container.propTypes = {
 	className: PropTypes.shape({}),
 	fluid: PropTypes.bool
 }

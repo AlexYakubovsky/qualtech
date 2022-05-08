@@ -1,7 +1,7 @@
 import React from 'react'
 import useWindowSize from 'hooks/useWindowSize'
 import { Section, Text, Button, Container, Row, Col, Screen } from 'components/ui'
-import ServiceItem from 'components/sections/ourServices/ServiceItem'
+import ServiceItem from './ServiceItem'
 import img from 'images/backgrounds/1.png'
 import s from './our-services.module.scss'
 
