@@ -1,0 +1,264 @@
+@import 'styles/variables';
+
+$violet: #6780FC;
+$sky: #1373EC;
+$green: #81CF80;
+$pink: #EA908E;
+$orange: #F05F10;
+
+.how-we-work {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 135px;
+  margin-bottom: 145px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__content {
+    width: 560px;
+
+    p {
+      max-width: 500px;
+    }
+
+    .description {
+      margin-top: 30px;
+      line-height: 38.5px;
+    }
+  }
+
+  &__snake {
+    position: relative;
+
+    .square {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      &-fill {
+        width: 95px;
+        height: 95px;
+        top: -42.5px;
+      }
+
+      &-dashed {
+        width: 130px;
+        height: 130px;
+        top: -57px;
+        transform: rotate(-1.5deg);
+
+        .number {
+          transform: rotate(1.5deg);
+        }
+      }
+    }
+
+    .line {
+      height: 15px;
+      width: 100%;
+    }
+
+    .number {
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+
+  .animation-img {
+    position: absolute;
+  }
+
+  .svg-line {
+    position: absolute;
+  }
+}
+
+.step-number-1 {
+  &.step {
+    width: 665px;
+    height: 315px;
+
+    .step__snake {
+      .square {
+        left: -1px;
+      }
+
+      .line {
+        background: linear-gradient(45deg, #6780fc, #617ffa, #527bf7, #3d78f2, #2474ee, #1373ec);
+      }
+    }
+
+    .animation-img {
+      top: -135px;
+      right: -30px;
+    }
+  }
+}
+
+.step-number-2 {
+  &.step {
+    width: 530px;
+    height: 315px;
+
+    .step__content {
+      width: 530px;
+
+      p {
+        max-width: 100%;
+      }
+    }
+
+    .step__snake {
+      .square {
+        left: -1px;
+
+        &-dashed {
+          background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $sky 1% 18%);
+        }
+      }
+
+      .line {
+        background: linear-gradient(90deg, #1373ec, #1373ec, #8cc0fc);
+      }
+    }
+
+    .animation-img {
+      top: -120px;
+      right: -240px;
+    }
+  }
+}
+
+.step-number-3 {
+  &.step {
+    width: 66%;
+    margin-left: 34%;
+    height: 485px;
+    justify-content: flex-end;
+
+    .step__content {
+      padding-bottom: 100px;
+      margin-left: 50px;
+    }
+
+    .step__snake {
+      .square {
+        z-index: 1;
+        left: 50px;
+      }
+
+      .line {
+        right: 240px;
+        position: relative;
+        background: linear-gradient(90deg, #81cf80, #81cf80, #81cf80, #76cb83, #5bc189, #3bb58f, #1daa93, #0ca594);
+      }
+    }
+
+    .animation-img {
+      top: 115px;
+      right: 40px;
+
+      &.animation-2 {
+        left: -480px;
+        right: auto;
+      }
+    }
+
+    .svg-line {
+      right: -5px;
+      top: -15px;
+    }
+  }
+}
+
+.step-from-3-to-4 {
+  width: 38%;
+
+  .animation-img {
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+  }
+}
+
+.step-number-4 {
+  &.step {
+    width: 1000px;
+    height: 485px;
+    padding-left: 250px;
+    padding-top: 120px;
+
+    .step__content {
+      margin-left: 70px;
+    }
+
+    .step__snake {
+      .square {
+        left: 70px;
+      }
+
+      .line {
+        background: linear-gradient(90deg, #ea908e, #ea908e, #ea908e, #f66f50, #f46635, #f05f10);
+      }
+    }
+
+    .animation-img {
+      left: 20px;
+      top: 80px;
+    }
+
+    .svg-line {
+      top: -15px;
+      left: 0;
+    }
+  }
+}
+
+.step-number-5 {
+  &.step {
+    width: 440px;
+    height: 485px;
+    padding-top: 120px;
+
+    .step__content {
+      p {
+        max-width: 440px;
+      }
+    }
+
+    .step__snake {
+      .square {
+        left: -1px;
+
+        &-dashed {
+          background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $orange 1% 18%);
+        }
+      }
+    }
+
+    .animation-img {
+      top: -55px;
+      right: -10px;
+    }
+  }
+}
+
+
+.color-violet {
+  background: $violet;
+}
+
+.color-green {
+  background: $green;
+}
+
+.color-pink {
+  background: $pink;
+}

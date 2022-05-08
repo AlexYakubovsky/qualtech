@@ -67,7 +67,7 @@ const Header = React.memo(() => {
 		const distanceY = window.pageYOffset || document.documentElement.scrollTop
 
 		if (distanceY) {
-			headerRef.current.classList.add(s.scroll)
+			headerRef?.current?.classList.add(s.scroll)
 		} else {
 			headerRef.current.classList.remove(s.scroll)
 		}

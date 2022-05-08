@@ -50,7 +50,7 @@ export default function Banners() {
 							<Row row={20} align='center'>
 								<Col sm={6} order-sm={2}>
 									<div className={s['banners__animation']}>
-										<Lottie path={banner.lottie} />
+										<Lottie path={banner.lottie} style={{ display: 'flex' }} />
 									</div>
 								</Col>
 								<Col sm={6} order-sm={1}>

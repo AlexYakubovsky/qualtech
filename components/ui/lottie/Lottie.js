@@ -1,8 +1,13 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import lottie from 'lottie-web'
 
-const Lottie = ({ path, ...props }) => {
+const Lottie = ({
+	path,
+	className,
+	style,
+	...props
+}) => {
 	const lottieRef = useRef(null)
 
 	useEffect(() => {
@@ -22,14 +27,17 @@ const Lottie = ({ path, ...props }) => {
 	return (
 		<div
 			ref={lottieRef}
-			style={{ display: 'flex' }}
+			className={className}
+			style={style}
 			{...props}
 		/>
 	)
 }
 
-Lottie.defaultProps = {
-	path: PropTypes.string.isRequired
+Lottie.propTypes = {
+	path: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	style: PropTypes.shape({})
 }
 
 export default Lottie
