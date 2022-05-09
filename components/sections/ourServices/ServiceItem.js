@@ -52,8 +52,10 @@ const ServiceItem = ({
 }
 
 ServiceItem.propTypes = {
-	index: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	footer: PropTypes.string.isRequired,
+	index: PropTypes.oneOfType([
+		PropTypes.string, PropTypes.number
+	]),
+	footer: PropTypes.string,
 	title: PropTypes.string.isRequired
 }
 

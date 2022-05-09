@@ -33,12 +33,12 @@ const Step = ({
 				</div>
 				<div className={s.line} />
 			</div>
-			{animationsImg.length && (
+			{animationsImg?.length && (
 				animationsImg.map((animation, i) => (
 					<Lottie
 						key={i}
-						path={animation}
-						className={cn(s['animation-img'], s[`animation-${+i + 1}`])}
+						path={animation.path}
+						className={cn(s['animation-img'], s[`animation-${+i + 1}`], s[animation.name])}
 					/>
 				))
 			)}

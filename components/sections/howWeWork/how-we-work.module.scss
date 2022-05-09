@@ -6,34 +6,100 @@ $green: #81CF80;
 $pink: #EA908E;
 $orange: #F05F10;
 
+.title {
+  @media (min-width: $xl) {
+    margin-top: 80px;
+  }
+}
+
 .how-we-work {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 135px;
-  margin-bottom: 145px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  @media (min-width: $sm) {
+    margin-top: 60px;
+  }
+  @media (min-width: $lg) {
+    margin-top: 80px;
+  }
+  @media (min-width: $xl) {
+    margin-top: 135px;
+    margin-bottom: 175px;
+  }
 }
 
 .step {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 400px;
+  @media (min-width: $xxs) {
+    height: 340px;
+  }
+  @media (min-width: $xs) {
+    height: 270px;
+  }
+  @media (min-width: $sm) {
+    justify-content: flex-end;
+  }
+  @media (min-width: $lg) {
+    height: 350px;
+  }
+  @media (min-width: $xl) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__content {
-    width: 560px;
-
-    p {
-      max-width: 500px;
+    margin-left: 18px;
+    z-index: 1;
+    @media (min-width: $xxs) {
+      z-index: 0;
+    }
+    @media (min-width: $sm) {
+      margin-left: 45px;
+    }
+    @media (min-width: $lg) {
+      margin-left: 80px;
+    }
+    @media (min-width: $xl) {
+      width: 560px;
+      margin-left: 0;
     }
 
     .description {
-      margin-top: 30px;
-      line-height: 38.5px;
+      margin-top: 15px;
+      line-height: 29px;
+      max-width: 500px;
+      @media (min-width: $sm) {
+        margin-top: 20px;
+      }
+      @media (min-width: $md) {
+        max-width: 610px;
+      }
+      @media (min-width: $lg) {
+        max-width: 700px;
+        margin-top: 30px;
+        line-height: 38.5px;
+      }
+      @media (min-width: $xl) {
+        max-width: 500px;
+      }
     }
   }
 
   &__snake {
     position: relative;
+    max-width: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media (min-width: $xl) {
+      max-width: 100%;
+      display: block;
+    }
 
     .square {
       position: absolute;
@@ -43,36 +109,93 @@ $orange: #F05F10;
       border-radius: 50%;
 
       &-fill {
-        width: 95px;
-        height: 95px;
-        top: -42.5px;
+        width: 54px;
+        height: 54px;
+        top: -1px;
+        @media (min-width: $sm) {
+          width: 66px;
+          height: 66px;
+        }
+        @media (min-width: $lg) {
+          width: 85px;
+          height: 85px;
+        }
+        @media (min-width: $xl) {
+          width: 95px;
+          height: 95px;
+          top: -42.5px;
+        }
       }
 
       &-dashed {
-        width: 130px;
-        height: 130px;
-        top: -57px;
-        transform: rotate(-1.5deg);
+        width: 54px;
+        height: 54px;
+        top: -1px;
+        transform: rotate(-9deg);
+        @media (min-width: $sm) {
+          width: 85px;
+          height: 85px;
+        }
+        @media (min-width: $lg) {
+          width: 110px;
+          height: 110px;
+        }
+        @media (min-width: $xl) {
+          width: 130px;
+          height: 130px;
+          top: -57px;
+          transform: rotate(-1.5deg);
+        }
 
         .number {
-          transform: rotate(1.5deg);
+          transform: rotate(9deg);
+          @media (min-width: $xl) {
+            transform: rotate(1.5deg);
+          }
         }
       }
     }
 
     .line {
-      height: 15px;
-      width: 100%;
+      height: 100%;
+      width: 10px;
+      @media (min-width: $lg) {
+        width: 15px;
+      }
+      @media (min-width: $xl) {
+        height: 15px;
+        width: 100%;
+      }
     }
 
     .number {
-      font-size: 36px;
+      font-size: 20px;
       font-weight: 700;
+      @media (min-width: $sm) {
+        font-size: 26px;
+      }
+      @media (min-width: $lg) {
+        font-size: 36px;
+      }
     }
   }
 
   .animation-img {
     position: absolute;
+    width: 150px;
+    height: 150px;
+    @media (min-width: $sm) {
+      width: 200px;
+      height: 200px;
+    }
+    @media (min-width: $lg) {
+      width: 250px;
+      height: 250px;
+    }
+    @media (min-width: $xxl) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   .svg-line {
@@ -82,92 +205,199 @@ $orange: #F05F10;
 
 .step-number-1 {
   &.step {
-    width: 665px;
-    height: 315px;
+    @media (min-width: $xl) {
+      width: 44.5%;
+      height: 315px;
+    }
+    @media (min-width: $xxl) {
+      width: 46.2%;
+    }
 
     .step__snake {
       .square {
-        left: -1px;
+        @media (min-width: $xl) {
+          left: -1px;
+        }
       }
 
       .line {
-        background: linear-gradient(45deg, #6780fc, #617ffa, #527bf7, #3d78f2, #2474ee, #1373ec);
+        background: linear-gradient(180deg, #6780fc, #617ffa, #527bf7, #3d78f2, #2474ee, #1373ec);
+        @media (min-width: $xl) {
+          background: linear-gradient(90deg, #6780fc, #617ffa, #527bf7, #3d78f2, #2474ee, #1373ec);
+        }
       }
     }
 
     .animation-img {
-      top: -135px;
-      right: -30px;
+      &.message {
+        bottom: -20px;
+        left: 60px;
+        @media (min-width: $sm) {
+          right: -30px;
+          top: -60px;
+          bottom: auto;
+          left: auto;
+        }
+        @media (min-width: $xl) {
+          top: -135px;
+        }
+      }
+
+      &.arrow-left {
+        bottom: 30px;
+        right: -10px;
+        @media (min-width: $sm) {
+          display: none;
+        }
+      }
     }
   }
 }
 
 .step-number-2 {
   &.step {
-    width: 530px;
-    height: 315px;
+    @media (min-width: $xl) {
+      width: 36.8%;
+      height: 315px;
+    }
 
     .step__content {
-      width: 530px;
+      @media (min-width: $xl) {
+        width: 530px;
+      }
 
       p {
-        max-width: 100%;
+        @media (min-width: $xl) {
+          max-width: 100%;
+        }
       }
     }
 
     .step__snake {
       .square {
-        left: -1px;
+        @media (min-width: $xl) {
+          left: -1px;
+        }
 
         &-dashed {
-          background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $sky 1% 18%);
+          background-image: radial-gradient($black 56%, transparent 50% 100%), repeating-conic-gradient($black 5.5% 12%, $sky 1% 18%);
+          @media (min-width: $xl) {
+            background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $sky 1% 18%);
+          }
         }
       }
 
       .line {
-        background: linear-gradient(90deg, #1373ec, #1373ec, #8cc0fc);
+        background: linear-gradient(180deg, #1373ec, #1373ec, #1373ec, #0092f6, #00a9e5, #00bac2, #00c79c, #81cf80);
+        @media (min-width: $xl) {
+          background: linear-gradient(90deg, #1373ec, #1373ec, #8cc0fc);
+        }
       }
     }
 
     .animation-img {
-      top: -120px;
-      right: -240px;
+      &.pen {
+        bottom: -10px;
+        right: 0;
+        @media (min-width: $sm) {
+          right: -30px;
+          top: -60px;
+          bottom: auto;
+        }
+        @media (min-width: $xl) {
+          top: -120px;
+          right: -240px;
+        }
+      }
+
+      &.arrow-left {
+        bottom: -20px;
+        left: 20px;
+        transform: rotate(270deg);
+        @media (min-width: $sm) {
+          display: none;
+        }
+      }
     }
   }
 }
 
 .step-number-3 {
   &.step {
-    width: 66%;
-    margin-left: 34%;
-    height: 485px;
-    justify-content: flex-end;
+    @media (min-width: $xl) {
+      width: 62.5%;
+      margin-left: 37.5%;
+      height: 485px;
+      justify-content: flex-end;
+    }
+    @media (min-width: $xxl) {
+      width: 66%;
+      margin-left: 34%;
+    }
 
     .step__content {
-      padding-bottom: 100px;
-      margin-left: 50px;
+      @media (min-width: $xl) {
+        padding-bottom: 100px;
+        margin-left: 50px;
+      }
     }
 
     .step__snake {
       .square {
-        z-index: 1;
-        left: 50px;
+        @media (min-width: $xl) {
+          z-index: 1;
+          left: 50px;
+        }
       }
 
       .line {
-        right: 240px;
-        position: relative;
-        background: linear-gradient(90deg, #81cf80, #81cf80, #81cf80, #76cb83, #5bc189, #3bb58f, #1daa93, #0ca594);
+        background: linear-gradient(180deg, #81cf80, #81cf80, #aac368, #c9b460, #dea667, #ea9978, #ea908e);
+        @media (min-width: $xl) {
+          position: relative;
+          right: 240px;
+          background: linear-gradient(90deg, #81cf80, #81cf80, #81cf80, #76cb83, #5bc189, #3bb58f, #1daa93, #0ca594);
+        }
       }
     }
 
     .animation-img {
-      top: 115px;
-      right: 40px;
+      &.arrow-left {
+        display: none;
+        @media (min-width: $xl) {
+          display: block;
+          top: 115px;
+          right: 40px;
+        }
+      }
 
-      &.animation-2 {
-        left: -480px;
-        right: auto;
+      &.gear {
+        bottom: 0;
+        right: -10px;
+        width: 80px;
+        height: 80px;
+        @media (min-width: $xxs) {
+          bottom: -10px;
+          right: 0;
+          width: 100px;
+          height: 100px;
+        }
+        @media (min-width: $sm) {
+          right: 0;
+          top: -20px;
+          bottom: auto;
+          width: 130px;
+          height: 130px;
+        }
+        @media (min-width: $lg) {
+          width: 180px;
+          height: 180px;
+        }
+        @media (min-width: $xl) {
+          left: -440px;
+          top: 125px;
+          width: 300px;
+          height: 300px;
+        }
       }
     }
 
@@ -178,40 +408,68 @@ $orange: #F05F10;
   }
 }
 
-.step-from-3-to-4 {
-  width: 38%;
-
-  .animation-img {
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-  }
-}
-
 .step-number-4 {
   &.step {
-    width: 1000px;
-    height: 485px;
-    padding-left: 250px;
-    padding-top: 120px;
+    @media (min-width: $xl) {
+      width: 65.4%;
+      height: 485px;
+      padding-left: 250px;
+      padding-top: 120px;
+    }
+    @media (min-width: $xxl) {
+      width: 69.4%;
+      padding-left: 250px;
+    }
 
     .step__content {
-      margin-left: 70px;
+      @media (min-width: $xl) {
+        margin-left: 20px;
+      }
+      @media (min-width: $xxl) {
+        margin-left: 70px;
+      }
     }
 
     .step__snake {
       .square {
-        left: 70px;
+        @media (min-width: $xl) {
+          left: 20px;
+        }
+        @media (min-width: $xxl) {
+          left: 70px;
+        }
       }
 
       .line {
-        background: linear-gradient(90deg, #ea908e, #ea908e, #ea908e, #f66f50, #f46635, #f05f10);
+        background: linear-gradient(180deg, #ea908e, #ea908e, #ea908e, #f66f50, #f46635, #f05f10);
+        @media (min-width: $xl) {
+          background: linear-gradient(90deg, #ea908e, #ea908e, #ea908e, #f66f50, #f46635, #f05f10);
+        }
       }
     }
 
     .animation-img {
-      left: 20px;
-      top: 80px;
+      &.arrow-right {
+        display: none;
+        @media (min-width: $sm) {
+          display: block;
+          right: -30px;
+          top: -60px;
+        }
+        @media (min-width: $xl) {
+          right: auto;
+          left: 20px;
+          top: 130px
+        }
+      }
+
+      &.like {
+        bottom: -65px;
+        right: -20px;
+        @media (min-width: $sm) {
+          display: none;
+        }
+      }
     }
 
     .svg-line {
@@ -223,29 +481,61 @@ $orange: #F05F10;
 
 .step-number-5 {
   &.step {
-    width: 440px;
-    height: 485px;
-    padding-top: 120px;
+    height: 245px;
+    @media (min-width: 414px) {
+      height: 220px;
+    }
+    @media (min-width: $xs) {
+      height: 185px;
+    }
+    @media (min-width: $sm) {
+      height: 160px;
+    }
+    @media (min-width: $lg) {
+      height: 200px;
+    }
+    @media (min-width: $xl) {
+      width: 30.5%;
+      height: 485px;
+      padding-top: 120px;
+    }
 
     .step__content {
       p {
-        max-width: 440px;
+        @media (min-width: $xl) {
+          max-width: 440px;
+        }
       }
     }
 
     .step__snake {
       .square {
-        left: -1px;
+        @media (min-width: $xl) {
+          left: -1px;
+        }
 
         &-dashed {
-          background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $orange 1% 18%);
+          background-image: radial-gradient($black 56%, transparent 50% 100%), repeating-conic-gradient($black 5.5% 12%, $orange 1% 18%);
+          @media (min-width: $xl) {
+            background-image: radial-gradient($black 55%, transparent 50% 100%), repeating-conic-gradient($black 8% 13%, $orange 1% 18%);
+          }
         }
       }
     }
 
     .animation-img {
-      top: -55px;
-      right: -10px;
+      &.like {
+        display: none;
+        @media (min-width: $sm) {
+          display: block;
+          right: -30px;
+          top: -60px;
+        }
+        @media (min-width: $xl) {
+          top: -55px;
+          right: -10px;
+        }
+      }
     }
   }
 }

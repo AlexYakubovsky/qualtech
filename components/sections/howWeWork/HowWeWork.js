@@ -1,22 +1,25 @@
 import React from 'react'
+import useWindowSize from 'hooks/useWindowSize'
 import Step from './Step'
-import { Section, Container, Text, Lottie } from 'components/ui'
-import cn from 'classnames'
+import { Section, Container, Text } from 'components/ui'
 import img from 'images/backgrounds/2.png'
 import s from './how-we-work.module.scss'
 
 export default function HowWeWork() {
+	const { deviceWidth, size } = useWindowSize()
+
 	return (
 		<Section
 			backgroundImg={img.src}
 			style={{
 				backgroundRepeat: 'repeat',
-				backgroundSize: 'auto',
-				paddingTop: 200
+				backgroundSize: deviceWidth === 'large' ? 'auto' : '150%'
 			}}
 		>
 			<Container>
-				<Text as='h2'>Как мы работаем</Text>
+				<div className={s.title}>
+					<Text as='h2'>Как мы работаем</Text>
+				</div>
 				<div className={s['how-we-work']}>
 					<Step
 						title='Обсуждение'
@@ -24,14 +27,20 @@ export default function HowWeWork() {
 						stepNumber='1'
 						square='fill'
 						squareColor='violet'
-						animationsImg={['animations/message.json']}
+						animationsImg={[
+							{ name: 'message', path: 'animations/message.json' },
+							{ name: 'arrow-left', path: 'animations/arrow-left.json' }
+						]}
 					/>
 					<Step
 						title='Предпроектная подготовка'
 						description='Разрабатываем карту проекта, интерактивный прототип, детально демонстрирующий структуру и функционал проекта, формируем ТЗ'
 						stepNumber='2'
 						square='dashed'
-						animationsImg={['animations/pen.json']}
+						animationsImg={[
+							{ name: 'pen', path: 'animations/pen.json' },
+							{ name: 'arrow-left', path: 'animations/arrow-left.json' }
+						]}
 					/>
 					<Step
 						title='Разработка'
@@ -39,19 +48,24 @@ export default function HowWeWork() {
 						stepNumber='3'
 						square='fill'
 						squareColor='green'
-						animationsImg={['animations/arrow-left.json', 'animations/gear.json']}
+						animationsImg={[
+							{ name: 'arrow-left', path: 'animations/arrow-left.json' },
+							{ name: 'gear', path: 'animations/gear.json' }
+						]}
 						svgLine={
-							<svg width='260' height='500'>
-								<linearGradient id='linearColors' x1='0' y1='0' x2='0' y2='1'>
-									<stop offset='5%' stopColor='#8cc0fc' />
-									<stop offset='25%' stopColor='#77bff7' />
-									<stop offset='40%' stopColor='#42bae4' />
-									<stop offset='60%' stopColor='#00b2c4' />
-									<stop offset='80%' stopColor='#00a9a3' />
-									<stop offset='100%' stopColor='#0ca594' />
-								</linearGradient>
-								<path d='M 0 7 A 180 176 0 0 1 0 493' stroke='url(#linearColors)' fill='none' strokeWidth='15' />
-							</svg>
+							size === 'xl' || size === 'xxl' ? (
+								<svg width='260' height='500'>
+									<linearGradient id='linearColors' x1='0' y1='0' x2='0' y2='1'>
+										<stop offset='5%' stopColor='#8cc0fc' />
+										<stop offset='25%' stopColor='#77bff7' />
+										<stop offset='40%' stopColor='#42bae4' />
+										<stop offset='60%' stopColor='#00b2c4' />
+										<stop offset='80%' stopColor='#00a9a3' />
+										<stop offset='100%' stopColor='#0ca594' />
+									</linearGradient>
+									<path d='M 0 7 A 180 176 0 0 1 0 493' stroke='url(#linearColors)' fill='none' strokeWidth='15' />
+								</svg>
+							) : null
 						}
 					/>
 					<Step
@@ -60,19 +74,25 @@ export default function HowWeWork() {
 						stepNumber='4'
 						square='fill'
 						squareColor='pink'
-						animationsImg={['animations/arrow-right.json']}
+						animationsImg={[
+							{ name: 'arrow-right', path: 'animations/arrow-right.json' },
+							{ name: 'like', path: 'animations/like.json' }
+						]}
 						svgLine={
-							<svg width='260' height='500'>
-								<linearGradient id='linearColors2' x1='0' y1='0' x2='0' y2='1'>
-									<stop offset='5%' stopColor='#81cf80' />
-									<stop offset='25%' stopColor='#98c972' />
-									<stop offset='40%' stopColor='#c2b860' />
-									<stop offset='60%' stopColor='#e2a26a' />
-									<stop offset='80%' stopColor='#eb9482' />
-									<stop offset='100%' stopColor='#ea908e' />
-								</linearGradient>
-								<path d='M 260 493 A 180 176 180 0 1 260 7' stroke='url(#linearColors2)' fill='none' strokeWidth='15' />
-							</svg>
+							size === 'xl' || size === 'xxl' ? (
+								<svg width='260' height='500'>
+									<linearGradient id='linearColors2' x1='0' y1='0' x2='0' y2='1'>
+										<stop offset='5%' stopColor='#81cf80' />
+										<stop offset='25%' stopColor='#98c972' />
+										<stop offset='40%' stopColor='#c2b860' />
+										<stop offset='60%' stopColor='#e2a26a' />
+										<stop offset='80%' stopColor='#eb9482' />
+										<stop offset='100%' stopColor='#ea908e' />
+									</linearGradient>
+									<path d='M 260 493 A 180 176 180 0 1 260 7' stroke='url(#linearColors2)' fill='none'
+												strokeWidth='15' />
+								</svg>
+							) : null
 						}
 					/>
 					<Step
@@ -80,10 +100,11 @@ export default function HowWeWork() {
 						description='После окончания всех запланированных работ происходит запуск MVP. Мы держим руку на пульсе и оказываем оперативную техническую поддержку'
 						stepNumber='5'
 						square='dashed'
-						animationsImg={['animations/like.json']}
+						animationsImg={[
+							{ name: 'like', path: 'animations/like.json' }
+						]}
 					/>
 				</div>
-
 			</Container>
 		</Section>
 	)
