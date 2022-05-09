@@ -56,7 +56,7 @@ Text.propTypes = {
 	as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'li', 'b', 'i', 'small', 'strong']),
 	className: PropTypes.string,
 	style: PropTypes.shape({}),
-	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm']),
+	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm', 'xs']),
 	color: PropTypes.oneOf(['primary', 'green', 'black']),
 	align: PropTypes.oneOf(['start', 'end', 'center', 'justify']),
 	weight: PropTypes.oneOf(['bold', 'medium', 'regular']),

@@ -1,0 +1,24 @@
+<svg width="215" height="150" viewBox="0 0 215 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.89">
+<mask id="mask0_1042_15871" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="215" height="150">
+<path d="M0 15C0 6.71573 6.71573 0 15 0H215V150H15C6.71572 150 0 143.284 0 135V15Z" fill="url(#paint0_linear_1042_15871)"/>
+</mask>
+<g mask="url(#mask0_1042_15871)">
+<ellipse cx="79" cy="-5.62501" rx="38" ry="35.625" fill="#30383D"/>
+<ellipse cx="17" cy="111.562" rx="38" ry="35.625" fill="#30383D"/>
+<ellipse cx="197" cy="90" rx="29" ry="27.1875" fill="#30383D"/>
+<ellipse cx="-12" cy="18.75" rx="29" ry="27.1875" fill="#30383D"/>
+<ellipse cx="161" cy="11.25" rx="19" ry="17.8125" fill="#30383D"/>
+<ellipse cx="98" cy="152.812" rx="19" ry="17.8125" fill="#30383D"/>
+<ellipse cx="122.5" cy="82.0312" rx="14.5" ry="13.5938" fill="#30383D"/>
+<ellipse cx="41.5" cy="55.7812" rx="10.5" ry="9.84375" fill="#30383D"/>
+<ellipse cx="157.5" cy="127.031" rx="10.5" ry="9.84375" fill="#30383D"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1042_15871" x1="0" y1="150" x2="215" y2="150" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C4C4C4"/>
+<stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

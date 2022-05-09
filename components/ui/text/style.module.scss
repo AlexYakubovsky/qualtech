@@ -40,13 +40,26 @@
   }
 
   &.text-md {
-    font-size: 22px;
-    line-height: 37px;
+    font-size: 16px;
+    line-height: 22px;
+    @media (min-width: $sm) {
+      font-size: 22px;
+      line-height: 30px;
+    }
   }
 
   &.text-sm {
     font-size: 18px;
     line-height: 25px;
+  }
+
+  &.text-xs {
+    font-size: 16px;
+    line-height: 22px;
+    @media (min-width: $sm) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 }
 

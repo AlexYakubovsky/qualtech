@@ -171,6 +171,9 @@ $breakpoints: (
     }
   }
   @media (min-width: $xl) {
+    &-xl-top-70 {
+      margin-top: 70px;
+    }
     &-xl-top-80 {
       margin-top: 80px;
     }

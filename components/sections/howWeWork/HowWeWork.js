@@ -13,6 +13,7 @@ export default function HowWeWork() {
 			backgroundImg={img.src}
 			style={{
 				backgroundRepeat: 'repeat',
+				backgroundPosition: 'center bottom',
 				backgroundSize: deviceWidth === 'large' ? 'auto' : '150%'
 			}}
 		>

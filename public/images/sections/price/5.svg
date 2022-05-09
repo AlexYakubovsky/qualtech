@@ -1,0 +1,22 @@
+<svg width="214" height="150" viewBox="0 0 214 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.89">
+<mask id="mask0_1042_9142" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="214" height="150">
+<path d="M0 15C0 6.71573 6.71573 0 15 0H214V150H15C6.71573 150 0 143.284 0 135V15Z" fill="url(#paint0_linear_1042_9142)"/>
+</mask>
+<g mask="url(#mask0_1042_9142)">
+<path d="M252.5 13.125L-40 13.125" stroke="#30383D" stroke-width="15"/>
+<path d="M252.5 60L-40 60" stroke="#30383D" stroke-width="15"/>
+<path d="M252.5 106.875L-40 106.875" stroke="#30383D" stroke-width="15"/>
+<path d="M252.5 153.75L-40 153.75" stroke="#30383D" stroke-width="15"/>
+<path d="M253 36.5625L-39.5 36.5625" stroke="#30383D" stroke-width="15"/>
+<path d="M253 83.4375L-39.5 83.4375" stroke="#30383D" stroke-width="15"/>
+<path d="M253 130.312L-39.5 130.312" stroke="#30383D" stroke-width="15"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1042_9142" x1="0" y1="150" x2="214" y2="150" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C4C4C4"/>
+<stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
