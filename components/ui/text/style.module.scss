@@ -114,6 +114,34 @@ h2 {
   }
 }
 
+h3 {
+  &.text {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    @media (min-width: $sm) {
+      font-size: 34px;
+      line-height: 36px;
+    }
+    @media (min-width: $md) {
+      font-size: 43px;
+      line-height: 46px;
+    }
+    @media (min-width: $lg) {
+      font-size: 54px;
+      line-height: 60px;
+    }
+    @media (min-width: $xl) {
+      font-size: 61px;
+      line-height: 70px;
+    }
+    @media (min-width: $xxl) {
+      font-size: 70px;
+      line-height: 83px;
+    }
+  }
+}
+
 h6 {
   &.text {
     font-family: $font-primary;
@@ -142,6 +170,10 @@ h6 {
 
 .color-black {
   color: $black;
+}
+
+.color-violet {
+  color: $violet;
 }
 
 .text-start {

@@ -24,6 +24,7 @@ const ServiceItem = ({
 						src='/images/sections/our-services/top.svg'
 						width='189'
 						height='120'
+						quality='100'
 						alt=''
 					/>
 				</div>
@@ -43,6 +44,7 @@ const ServiceItem = ({
 						src={`/images/sections/our-services/${index}-bottom.svg`}
 						layout='fill'
 						objectFit='cover'
+						quality='100'
 						alt=''
 					/>
 				</div>
