@@ -12,6 +12,7 @@ const Section = ({
 	pt0,
 	pb0,
 	backgroundImg,
+	colorfulBackground,
 	...rest
 }) => {
 	const classNames = cn(
@@ -34,6 +35,13 @@ const Section = ({
 			...style,
 		}
 	}
+	if (colorfulBackground) {
+		style = {
+			position: 'relative',
+			backgroundColor: 'white',
+			...style,
+		}
+	}
 
 	return (
 		<section
@@ -53,7 +61,8 @@ Section.propTypes = {
 	p0: PropTypes.bool,
 	pt0: PropTypes.bool,
 	pb0: PropTypes.bool,
-	backgroundImg: PropTypes.any
+	backgroundImg: PropTypes.any,
+	colorfulBackground: PropTypes.bool
 }
 
 export default Section

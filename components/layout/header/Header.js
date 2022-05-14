@@ -17,9 +17,9 @@ const Header = React.memo(() => {
 	const { deviceWidth } = useWindowSize()
 
 	useEffect(() => {
-		isOpen && handlerOverflow(true)
+		isOpen && deviceWidth === 'large' && handlerOverflow(true)
 		return () => handlerOverflow(false)
-	}, [isOpen, handlerOverflow])
+	}, [isOpen, deviceWidth, handlerOverflow])
 
 	const variantsBackground = {
 		open: (height = 1000) => ({

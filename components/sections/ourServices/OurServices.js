@@ -1,18 +1,17 @@
 import React from 'react'
 import useWindowSize from 'hooks/useWindowSize'
-import { Section, Text, Button, Container, Row, Col, Screen } from 'components/ui'
+import { Section, Text, Button, Container, Row, Col, Screen, ColorfulBackground } from 'components/ui'
 import ServiceItem from './ServiceItem'
-import img from 'images/backgrounds/1.png'
 import s from './our-services.module.scss'
 
 export default function OurServices() {
 	const { size, deviceWidth } = useWindowSize()
 
 	return (
-		<Section style={{ backgroundColor: 'white' }} backgroundImg={img.src}>
+		<Section colorfulBackground>
 			<Container>
 				<Row row={15} align='center'>
-					<Col lg={5} xl={6}>
+					<Col lg={5} xl={6} className='z-index-1'>
 						<Text as='h2' color='black'>Наши услуги</Text>
 						<Text as='p' size='xl' color='black' className='offset-top-15 offset-sm-top-30'>
 							Мы предлагаем полный комплекс услуг для проектов любого уровня и любой стадии готовности — от начальной,
@@ -23,7 +22,7 @@ export default function OurServices() {
 							<Button view='secondary' className='offset-top-80'>Оставить заявку</Button>
 						</Screen>
 					</Col>
-					<Col lg={7} xl={6}>
+					<Col lg={7} xl={6} className='z-index-1'>
 						<div className={s.services}>
 							<Row row={deviceWidth === 'small' ? 20 : 40}>
 								<ServiceItem
@@ -86,6 +85,8 @@ export default function OurServices() {
 					</Col>
 				</Row>
 			</Container>
+
+			<ColorfulBackground className={s.colorful} />
 		</Section>
 	)
 }

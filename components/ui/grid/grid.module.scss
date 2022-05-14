@@ -186,11 +186,6 @@ $breakpoints: (
 
 @each $breakpoint, $width in $breakpoints {
   @media (min-width: map.get($width, 'screen')) {
-    @if ($breakpoint == 'xs') {
-      .grid {
-        grid-gap: $gap;
-      }
-    }
     .container {
       max-width: map.get($width, 'container') + ($gap * 2);
       //@if ($breakpoint == 'sm') {
