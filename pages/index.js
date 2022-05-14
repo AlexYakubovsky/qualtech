@@ -1,6 +1,14 @@
 import React from 'react'
 import Layout from 'components/layout'
-import { Banners, OurServices, HowWeWork, Price, HardProject, ServiceDescription } from 'components/sections'
+import {
+	Banners,
+	OurServices,
+	HowWeWork,
+	Price,
+	HardProject,
+	ServiceDescription,
+	ComplexApproach
+} from 'components/sections'
 
 export default function Index() {
 	return (
@@ -10,8 +18,8 @@ export default function Index() {
 			<HowWeWork />
 			<Price />
 			<HardProject />
-			<ServiceDescription/>
-			<HardProject />
+			<ServiceDescription />
+			<ComplexApproach />
 		</Layout>
 	)
 }

@@ -1,0 +1,109 @@
+@import "styles/variables";
+
+.complex-approach {
+  box-shadow: 0 0 50px #1B2023;
+  border-radius: 15px;
+  background: $blue;
+  padding: 20px;
+  margin-bottom: 15px;
+  @media (min-width: $xs) {
+    padding: 45px;
+  }
+  @media (min-width: $sm) {
+    padding: 30px;
+  }
+  @media (min-width: $lg) {
+    margin-top: 120px;
+  }
+  @media (min-width: $xl) {
+    margin-top: 200px;
+    padding: 85px 65px 70px 80px;
+  }
+
+  &__text {
+    @media (min-width: $sm) {
+      width: calc(100% - 25px);
+    }
+    @media (min-width: $md) {
+      width: calc(100% - 65px);
+    }
+    @media (min-width: $xl) {
+      width: calc(100% - 110px);
+    }
+    @media (min-width: $xxl) {
+      width: calc(100% - 90px);
+    }
+
+    .annual-contracts {
+      margin-top: 15px;
+      @media (max-width: $xs - 0.02) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+      @media (min-width: $sm) {
+        margin-top: 20px;
+      }
+      @media (min-width: $lg) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    .window {
+      @media (min-width: $sm) {
+        transform: translateY(35px);
+      }
+      @media (min-width: $xxl) {
+        width: 525px;
+        height: 450px;
+      }
+    }
+
+    .fire {
+      position: absolute;
+      bottom: -10px;
+      right: 8px;
+      width: 60px;
+      height: 60px;
+      @media (min-width: $xxs) {
+        width: 75px;
+        height: 75px;
+      }
+      @media (min-width: $xs) {
+        width: 90px;
+        height: 90px;
+        bottom: 0;
+        right: 20px;
+      }
+      @media (min-width: $sm) {
+        right: auto;
+        bottom: auto;
+        top: 90px;
+        left: -50px;
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $md) {
+        top: 50px;
+        left: -70px;
+        width: 80px;
+        height: 80px;
+      }
+      @media (min-width: $lg) {
+        top: 60px;
+        left: -95px;
+        width: 110px;
+        height: 110px;
+      }
+      @media (min-width: $xl) {
+        left: -130px;
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+}
