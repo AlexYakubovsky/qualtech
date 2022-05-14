@@ -8,8 +8,11 @@ $circle-width: 121px;
 $circle-height: 121px;
 
 .hard-project {
+  @media (min-width: $lg) {
+    padding-bottom: 120px;
+  }
   @media (min-width: $xl) {
-    padding-bottom: 150px;
+    padding-bottom: 170px;
   }
 
   &__description {
