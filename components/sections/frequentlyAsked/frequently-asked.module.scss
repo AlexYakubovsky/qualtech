@@ -1,0 +1,9 @@
+@import 'styles/variables';
+
+.frequently-asked {
+  &__title {
+    @media(min-width: $lg) {
+      width: 60%;
+    }
+  }
+}

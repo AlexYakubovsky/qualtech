@@ -7,7 +7,8 @@ import {
 	Price,
 	HardProject,
 	ServiceDescription,
-	ComplexApproach
+	ComplexApproach,
+	FrequentlyAsked
 } from 'components/sections'
 
 export default function Index() {
@@ -20,6 +21,7 @@ export default function Index() {
 			<HardProject />
 			<ServiceDescription />
 			<ComplexApproach />
+			<FrequentlyAsked />
 		</Layout>
 	)
 }
