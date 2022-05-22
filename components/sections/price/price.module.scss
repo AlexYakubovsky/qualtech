@@ -1,10 +1,8 @@
 @import "styles/variables";
 
-$background: #272F33;
-
 .service-price-item {
   min-height: 90px;
-  background: $background;
+  background: $black-light;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +15,7 @@ $background: #272F33;
 
   &:before {
     content: "";
-    box-shadow: 0 0 20px 25px $background;
+    box-shadow: 0 0 20px 25px $black-light;
     width: 0;
     height: 100%;
     position: absolute;

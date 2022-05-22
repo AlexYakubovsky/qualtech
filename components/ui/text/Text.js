@@ -57,7 +57,7 @@ Text.propTypes = {
 	className: PropTypes.string,
 	style: PropTypes.shape({}),
 	size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md', 'sm', 'xs']),
-	color: PropTypes.oneOf(['primary', 'green', 'black', 'violet']),
+	color: PropTypes.oneOf(['primary', 'green', 'black', 'violet', 'danger']),
 	align: PropTypes.oneOf(['start', 'end', 'center', 'justify']),
 	weight: PropTypes.oneOf(['bold', 'medium', 'regular']),
 	overflow: PropTypes.oneOf(['fade', 'ellipsis']),

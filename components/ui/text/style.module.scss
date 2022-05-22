@@ -110,6 +110,7 @@ h2 {
     @media (min-width: $xl) {
       font-size: 70px;
       line-height: 70px;
+      letter-spacing: 0.05em;
     }
     @media (min-width: $xxl) {
       font-size: 84px;
@@ -155,6 +156,7 @@ h6 {
     @media (min-width: $sm) {
       font-size: 32px;
       line-height: 32px;
+      letter-spacing: 0.02em;
     }
     @media (min-width: $lg) {
       font-size: 36px;
@@ -178,6 +180,10 @@ h6 {
 
 .color-violet {
   color: $violet;
+}
+
+.color-danger {
+  color: $danger;
 }
 
 .text-start {
