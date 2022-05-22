@@ -1,0 +1,137 @@
+@import "styles/variables";
+
+.leave-request {
+  &__images {
+    position: relative;
+    min-height: 100px;
+
+    .message {
+      position: absolute;
+      top: 0;
+      right: 60px;
+      width: 109px;
+      height: 56px;
+      @media (min-width: $sm) {
+        width: 145px;
+        height: 75px;
+      }
+      @media (min-width: $lg) {
+        width: 163.5px;
+        height: 84px;
+      }
+      @media (min-width: $xl) {
+        width: 217px;
+        height: 111px;
+      }
+    }
+
+    .button {
+      position: absolute;
+      top: 50px;
+      right: 125px;
+      width: 102.5px;
+      height: 31px;
+      @media (min-width: $sm) {
+        width: 137px;
+        height: 41.5px;
+        top: 60px;
+        right: 145px;
+      }
+      @media (min-width: $lg) {
+        width: 154px;
+        height: 46.5px;
+        top: 70px;
+        right: 160px;
+      }
+      @media (min-width: $xl) {
+        width: 205px;
+        height: 62px;
+        top: 90px;
+        right: 175px;
+      }
+    }
+
+    .plus {
+      position: absolute;
+      top: 20px;
+      right: -3px;
+      width: 77px;
+      height: 77px;
+      @media (min-width: $sm) {
+        width: 102px;
+        height: 102px;
+        top: 55px;
+        right: 0;
+      }
+      @media (min-width: $lg) {
+        width: 115.5px;
+        height: 115.5px;
+        top: 65px;
+      }
+      @media (min-width: $xl) {
+        width: 153px;
+        height: 153px;
+        top: 90px;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 15px;
+    @media (min-width: $sm) {
+      margin-top: 35px;
+    }
+    @media (min-width: $xl) {
+      margin-top: 85px;
+    }
+
+    .textarea {
+      height: 110px;
+      @media (min-width: $sm) {
+        height: 150px;
+      }
+      @media (min-width: $lg) {
+        height: 195px;
+      }
+    }
+
+    .submit {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      margin-top: 10px;
+      @media (min-width: $sm) {
+        margin-top: 30px;
+      }
+      @media (min-width: $lg) {
+        margin-top: 50px;
+      }
+
+      button {
+        margin-left: auto;
+      }
+
+      .policy-agree {
+        color: #555B5F;
+        font-size: 12px;
+        line-height: 13px;
+        margin-top: 10px;
+        @media (min-width: $sm) {
+          max-width: 310px;
+        }
+        @media (min-width: $lg) {
+          max-width: 410px;
+        }
+
+        span {
+          color: #555B5F;
+          transition: .3s ease;
+
+          &:hover {
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

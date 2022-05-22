@@ -8,7 +8,8 @@ import {
 	HardProject,
 	ServiceDescription,
 	ComplexApproach,
-	FrequentlyAsked
+	FrequentlyAsked,
+	LeaveRequest
 } from 'components/sections'
 
 export default function Index() {
@@ -22,6 +23,7 @@ export default function Index() {
 			<ServiceDescription />
 			<ComplexApproach />
 			<FrequentlyAsked />
+			<LeaveRequest />
 		</Layout>
 	)
 }

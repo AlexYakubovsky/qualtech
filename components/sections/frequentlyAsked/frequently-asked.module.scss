@@ -1,6 +1,8 @@
 @import 'styles/variables';
 
 .frequently-asked {
+  margin-bottom: 15px;
+
   &__title {
     @media(min-width: $lg) {
       width: 60%;
