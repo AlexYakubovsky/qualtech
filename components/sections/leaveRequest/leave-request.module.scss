@@ -112,7 +112,7 @@
       }
 
       .policy-agree {
-        color: #555B5F;
+        color: $gray;
         font-size: 12px;
         line-height: 13px;
         margin-top: 10px;
@@ -128,7 +128,7 @@
           transition: .3s ease;
 
           &:hover {
-            color: $gray;
+            color: $white;
           }
         }
       }

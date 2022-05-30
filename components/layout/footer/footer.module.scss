@@ -1,0 +1,67 @@
+@import "styles/variables";
+
+.footer {
+  background: $black-extra;
+
+  .top {
+    border-bottom: 2px solid $dark-gray;
+  }
+
+  .bottom {
+    margin-top: 20px;
+    text-align: center;
+    @media (min-width: $sm) {
+      margin-top: 35px;
+      text-align: end;
+    }
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      position: relative;
+      height: 31px;
+      width: 31px;
+      margin-right: 8px;
+    }
+
+    .name {
+      font-size: 22px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    @media(min-width: $sm) {
+      align-items: flex-end;
+    }
+    @media(min-width: $lg) {
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+    }
+
+    li {
+      color: $gray;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      @media(min-width: $sm) {
+        font-size: 18px;
+      }
+
+        &:not(:last-child) {
+        margin-bottom: 15px;
+        @media(min-width: $lg) {
+          margin-bottom: 0;
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+}

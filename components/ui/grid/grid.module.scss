@@ -35,11 +35,11 @@ $breakpoints: (
 
   @for $i from 1 through $columns {
     .col#{$infix}-#{$i} {
-      flex: 0 0 #{100% / $columns * $i};
-      max-width: #{100% / $columns * $i};
+      flex: 0 0 calc(100% / #{$columns} * #{$i});
+      max-width: calc(100% / #{$columns} * #{$i});
     }
     .offset#{$infix}-#{$i} {
-      margin-left: #{100% / $columns * $i};
+      margin-left: calc(100% / #{$columns} * #{$i});
     }
     .order#{$infix}-#{$i} {
       order: $i;
