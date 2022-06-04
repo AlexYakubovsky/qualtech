@@ -1,11 +1,13 @@
 import React from 'react'
 import cn from 'classnames'
 import useWindowSize from 'hooks/useWindowSize'
-import { Section, Container, Row, Col, Text, Screen, ColorfulBackground } from 'components/ui'
+import usePosition from 'hooks/usePosition'
+import { Section, Container, Row, Col, Text, Screen, ColorfulBackground, ViewportScroll } from 'components/ui'
 import s from './service-description.module.scss'
 
 const ServiceDescription = () => {
 	const { deviceWidth } = useWindowSize()
+	const { ref, y } = usePosition()
 
 	const FullCycle = () => (
 		<div className={cn(s['service-description'], s['full-cycle'])}>
@@ -35,9 +37,9 @@ const ServiceDescription = () => {
 	)
 
 	return (
-		<Section colorfulBackground>
+		<Section backgroundColor='white'>
 			<Container>
-				<div className={s['service-description-wrapper']}>
+				<div className={s['service-description-wrapper']} ref={ref}>
 					<Row row={deviceWidth === 'medium' ? 40 : 15} align='center'>
 						<Col sm={9} md={8} lg={6} xl={5}>
 							<div className={s['service-description']}>
@@ -59,9 +61,14 @@ const ServiceDescription = () => {
 						</Col>
 						<Screen size='sm' down>
 							<Col xs={12}>
-								<div className={cn(s.ticker, s['mobile-top'])}>
+								<ViewportScroll
+									inputRange={[y - 300, y * 2]}
+									outputRange={[0, -300]}
+									className={cn(s.ticker, s['mobile-top'])}
+									horizontal
+								>
 									<Text as='p'>Разработка сайтов</Text>
-								</div>
+								</ViewportScroll>
 							</Col>
 						</Screen>
 						<Col sm={10} offset-sm={1} md={9} lg={5} offset-xl={2}>
@@ -98,9 +105,14 @@ const ServiceDescription = () => {
 						</Col>
 						<Screen size='sm' down>
 							<Col xs={12}>
-								<div className={cn(s.ticker, s['mobile-bottom'])}>
+								<ViewportScroll
+									inputRange={[y + 300, y * 2]}
+									outputRange={[0, 300]}
+									className={cn(s.ticker, s['mobile-bottom'])}
+									horizontal
+								>
 									<Text as='p'>Разработка сайтов</Text>
-								</div>
+								</ViewportScroll>
 							</Col>
 						</Screen>
 						<Screen size='lg' down>
@@ -110,15 +122,27 @@ const ServiceDescription = () => {
 						</Screen>
 					</Row>
 					<Screen size='sm'>
-						<div className={s.ticker}>
+						<ViewportScroll
+							inputRange={
+								deviceWidth === 'large'
+									? [y - 600, y * 2]
+									: [y - 600, y * 1.5]
+							}
+							outputRange={[-200, -600]}
+							xStyle={deviceWidth === 'large' ? '-51%' : '-30%'}
+							className={s.ticker}
+						>
 							<Text as='p'>Разработка сайтов</Text>
-						</div>
+						</ViewportScroll>
 					</Screen>
 				</div>
 			</Container>
 
 			<Screen size='sm'>
-				<ColorfulBackground className={s.colorful} />
+				<ColorfulBackground
+					className={s.colorful}
+					isActiveFade={deviceWidth === 'large'}
+				/>
 			</Screen>
 		</Section>
 	)

@@ -7,7 +7,7 @@ import useOverflow from 'hooks/useOverflow'
 import useWindowSize from 'hooks/useWindowSize'
 import MenuToggle from './MenuToggle'
 import Menu from './Menu'
-import { Text, Button, Screen } from 'components/ui'
+import { Text, Button, Screen, FadeIn } from 'components/ui'
 import s from './header.module.scss'
 
 const Header = React.memo(() => {
@@ -84,12 +84,12 @@ const Header = React.memo(() => {
 			initial={false}
 			animate={isOpen ? 'open' : 'closed'}
 		>
-			<div className={s.header__logo}>
+			<FadeIn className={s.header__logo} y={0}>
 				<div className={s['logo-img']}>
 					<Image src='/images/logo.png' layout='fill' objectFit='cover' />
 				</div>
 				<Text size='xl'>Разработка сайтов</Text>
-			</div>
+			</FadeIn>
 			<nav className={s.header__nav}>
 				<motion.div className={s['header__nav-background']} variants={variantsBackground} />
 				<Menu />
@@ -102,15 +102,17 @@ const Header = React.memo(() => {
 							Оставить заявку
 						</Button>
 					</motion.div>
-					<Button
-						as='a'
-						href={`tel:${contacts.number}`}
-						size='md'
-						view='callback'
-						iconRight='phone'
-					>
-						{contacts.number}
-					</Button>
+					<FadeIn y={0}>
+						<Button
+							as='a'
+							href={`tel:${contacts.number}`}
+							size='md'
+							view='callback'
+							iconRight='phone'
+						>
+							{contacts.number}
+						</Button>
+					</FadeIn>
 				</div>
 			</Screen>
 		</motion.header>

@@ -8,7 +8,7 @@ export default function OurServices() {
 	const { size, deviceWidth } = useWindowSize()
 
 	return (
-		<Section colorfulBackground>
+		<Section backgroundColor='white'>
 			<Container>
 				<Row row={15} align='center'>
 					<Col lg={5} xl={6} className='z-index-1'>
@@ -86,7 +86,10 @@ export default function OurServices() {
 				</Row>
 			</Container>
 
-			<ColorfulBackground className={s.colorful} />
+			<ColorfulBackground
+				className={s.colorful}
+				isActiveFade={deviceWidth === 'large'}
+			/>
 		</Section>
 	)
 }

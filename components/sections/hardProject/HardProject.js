@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Section, Container, Row, Col, Text, Lottie } from 'components/ui'
+import { Section, Container, Row, Col, Text, Lottie, FadeIn } from 'components/ui'
 import s from './hard-project.module.scss'
 
 const HardProject = () => {
@@ -11,7 +11,7 @@ const HardProject = () => {
 					<Row row={15}>
 						<Col sm={4} xl={4} order-sm={2}>
 							<div className={s['hard-project__images']}>
-								<div className={s.cloud}>
+								<FadeIn className={s.cloud} y={20}>
 									<Image
 										src='/images/sections/hard-project/cloud.png'
 										layout='fill'
@@ -19,8 +19,8 @@ const HardProject = () => {
 										quality='100'
 										alt=''
 									/>
-								</div>
-								<div className={s.window}>
+								</FadeIn>
+								<FadeIn className={s.window} y={20} duration={1.25}>
 									<Image
 										src='/images/sections/hard-project/window.png'
 										layout='fill'
@@ -28,8 +28,8 @@ const HardProject = () => {
 										quality='100'
 										alt=''
 									/>
-								</div>
-								<div className={s.circle}>
+								</FadeIn>
+								<FadeIn className={s.circle} y={20} duration={1.5}>
 									<Image
 										src='/images/sections/hard-project/circle.png'
 										layout='fill'
@@ -37,7 +37,7 @@ const HardProject = () => {
 										quality='100'
 										alt=''
 									/>
-								</div>
+								</FadeIn>
 								<div>
 									{/*<Lottie path='animations/rocket.json' />*/}
 								</div>

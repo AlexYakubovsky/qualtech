@@ -216,10 +216,9 @@
       transition: .3s;
       z-index: 2;
       @media (min-width: $lg) {
-        transform: translateX(-50%);
         position: absolute;
         width: 80px;
-        left: 50%;
+        left: 48%;
         height: 25px;
       }
 

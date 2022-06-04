@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 import cn from 'classnames'
+import { FadeIn } from '../framer'
 import s from './style.module.scss'
 
 const ColorfulBackground = ({
@@ -11,6 +12,8 @@ const ColorfulBackground = ({
 	right,
 	className,
 	style,
+	fade,
+	isActiveFade,
 	...props
 }) => {
 	const colorfulClassList = cn(
@@ -27,21 +30,35 @@ const ColorfulBackground = ({
 	}
 	return (
 		<div className={s['colorful-background-wrapper']}>
-			<div
-				className={colorfulClassList}
-				style={colorfulStyle}
-				{...props}
+			<FadeIn
+				isActive={isActiveFade}
+				{...fade}
 			>
-				<Image
-					src='/images/sections/hard-project/circle.png'
-					layout='fill'
-					objectFit='cover'
-					quality='100'
-					alt=''
-				/>
-			</div>
+				<div
+					className={colorfulClassList}
+					style={colorfulStyle}
+					{...props}
+				>
+					<Image
+						src='/images/sections/hard-project/circle.png'
+						layout='fill'
+						objectFit='cover'
+						quality='100'
+						alt=''
+					/>
+				</div>
+			</FadeIn>
 		</div>
 	)
+}
+
+ColorfulBackground.defaultProps = {
+	fade: {
+		x: 0,
+		duration: 2,
+		once: false
+	},
+	isActiveFade: true
 }
 
 ColorfulBackground.propTypes = {
@@ -50,7 +67,9 @@ ColorfulBackground.propTypes = {
 	left: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	right: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	className: PropTypes.string,
-	style: PropTypes.shape({})
+	style: PropTypes.shape({}),
+	fade: PropTypes.shape({}),
+	isActiveFade: PropTypes.bool
 }
 
 export default ColorfulBackground

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import useWindowSize from 'hooks/useWindowSize'
-import { Container, Row, Section, Col, Text } from 'components/ui'
+import { Container, Row, Section, Col, Text, FadeIn } from 'components/ui'
 import s from './price.module.scss'
 
 const Price = () => {
@@ -62,11 +62,37 @@ const Price = () => {
 	const lastPart = prices.slice(Math.round(prices.length / 2), prices.length)
 
 	const PriceItem = ({ name, time, cost, img }) => (
-		<div className={s['service-price-item']}>
-			<Text as='h6' className={s['service-price-item__title']}>{name}</Text>
-			<Text size='md' className={s['service-price-item__time']}>{time}</Text>
-			<Text size='lg' color='green' weight='bold' className={s['service-price-item__cost']}>{cost}</Text>
-			<div className={s['service-price-item__img']}>
+		<FadeIn
+			className={s['service-price-item']}
+			isActive={deviceWidth === 'large'}
+			y={0}
+		>
+			<Text
+				as='h6'
+				className={s['service-price-item__title']}
+			>
+				{name}
+			</Text>
+			<Text
+				size='md'
+				className={s['service-price-item__time']}
+			>
+				{time}
+			</Text>
+			<Text
+				size='lg'
+				color='green'
+				weight='bold'
+				className={s['service-price-item__cost']}
+			>
+				{cost}
+			</Text>
+			<FadeIn
+				className={s['service-price-item__img']}
+				y={0}
+				delay={0.3}
+				once={false}
+			>
 				<Image
 					src={img}
 					layout='fill'
@@ -74,8 +100,8 @@ const Price = () => {
 					quality='100'
 					alt=''
 				/>
-			</div>
-		</div>
+			</FadeIn>
+		</FadeIn>
 	)
 
 	return (
@@ -87,6 +113,7 @@ const Price = () => {
 						{firstPart.map((price, i) => (
 							<PriceItem
 								key={i}
+								index={i}
 								name={price.name}
 								time={price.time}
 								cost={price.cost}
@@ -98,6 +125,7 @@ const Price = () => {
 						{lastPart.map((price, i) => (
 							<PriceItem
 								key={i}
+								index={i + firstPart.length}
 								name={price.name}
 								time={price.time}
 								cost={price.cost}

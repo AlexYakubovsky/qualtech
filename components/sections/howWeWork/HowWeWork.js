@@ -8,6 +8,8 @@ import s from './how-we-work.module.scss'
 export default function HowWeWork() {
 	const { deviceWidth, size } = useWindowSize()
 
+	if (!deviceWidth) return null
+
 	return (
 		<Section
 			backgroundImg={img.src}
@@ -29,8 +31,17 @@ export default function HowWeWork() {
 						square='fill'
 						squareColor='violet'
 						animationsImg={[
-							{ name: 'message', path: 'animations/message.json' },
-							{ name: 'arrow-left', path: 'animations/arrow-left.json' }
+							{
+								name: 'message',
+								path: 'animations/message.json',
+								fade: {
+									fade: 'top'
+								}
+							},
+							{
+								name: 'arrow-left',
+								path: 'animations/arrow-left.json'
+							}
 						]}
 					/>
 					<Step
@@ -39,9 +50,23 @@ export default function HowWeWork() {
 						stepNumber='2'
 						square='dashed'
 						animationsImg={[
-							{ name: 'pen', path: 'animations/pen.json' },
-							{ name: 'arrow-left', path: 'animations/arrow-left.json' }
+							{
+								name: 'pen',
+								path: 'animations/pen.json'
+							},
+							{
+								name: 'arrow-left',
+								path: 'animations/arrow-left.json',
+								fade: {
+									fade: 'left'
+								}
+							}
 						]}
+						fade={
+							size === 'xl' || size === 'xxl'
+								? { duration: 1.25 }
+								: { duration: 1 }
+						}
 					/>
 					<Step
 						title='Разработка'
@@ -50,8 +75,20 @@ export default function HowWeWork() {
 						square='fill'
 						squareColor='green'
 						animationsImg={[
-							{ name: 'arrow-left', path: 'animations/arrow-left.json' },
-							{ name: 'gear', path: 'animations/gear.json' }
+							{
+								name: 'arrow-left',
+								path: 'animations/arrow-left.json',
+								fade: {
+									fade: 'right'
+								}
+							},
+							{
+								name: 'gear',
+								path: 'animations/gear.json',
+								fade: {
+									fade: size === 'xl' || size === 'xxl' ? 'left' : 'right'
+								}
+							}
 						]}
 						svgLine={
 							size === 'xl' || size === 'xxl' ? (
@@ -76,8 +113,17 @@ export default function HowWeWork() {
 						square='fill'
 						squareColor='pink'
 						animationsImg={[
-							{ name: 'arrow-right', path: 'animations/arrow-right.json' },
-							{ name: 'like', path: 'animations/like.json' }
+							{
+								name: 'arrow-right',
+								path: 'animations/arrow-right.json'
+							},
+							{
+								name: 'like',
+								path: 'animations/like.json',
+								fade: {
+									fade: 'top'
+								}
+							}
 						]}
 						svgLine={
 							size === 'xl' || size === 'xxl' ? (
@@ -102,8 +148,19 @@ export default function HowWeWork() {
 						stepNumber='5'
 						square='dashed'
 						animationsImg={[
-							{ name: 'like', path: 'animations/like.json' }
+							{
+								name: 'like',
+								path: 'animations/like.json',
+								fade: {
+									fade: 'top'
+								}
+							}
 						]}
+						fade={
+							size === 'xl' || size === 'xxl'
+								? { duration: 1.25 }
+								: { duration: 1 }
+						}
 					/>
 				</div>
 			</Container>

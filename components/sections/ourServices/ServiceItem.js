@@ -25,6 +25,7 @@ const ServiceItem = ({
 						width='189'
 						height='120'
 						quality='100'
+						priority={true}
 						alt=''
 					/>
 				</div>

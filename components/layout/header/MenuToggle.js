@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import { FadeIn } from 'components/ui'
 import s from './header.module.scss'
 
 const MenuToggle = ({ toggle, isOpen }) => {
 	return (
-		<div
+		<FadeIn
 			className={cn(s['toggle-menu'], { [s.open]: isOpen })}
 			onClick={toggle}
+			duration={0.5}
+			y={0}
 		>
 			<span />
 			<span />
-		</div>
+		</FadeIn>
 	)
 }
 

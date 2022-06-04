@@ -12,7 +12,7 @@ const Section = ({
 	pt0,
 	pb0,
 	backgroundImg,
-	colorfulBackground,
+	backgroundColor,
 	...rest
 }) => {
 	const classNames = cn(
@@ -21,7 +21,8 @@ const Section = ({
 			[s['section-first']]: first,
 			[s.p0]: p0,
 			[s.pt0]: pt0,
-			[s.pb0]: pb0
+			[s.pb0]: pb0,
+			[s['background-color-' + backgroundColor]]: backgroundColor
 		},
 		className
 	)
@@ -32,13 +33,6 @@ const Section = ({
 			backgroundRepeat: 'no-repeat',
 			backgroundPosition: 'center top',
 			backgroundSize: 'cover',
-			...style,
-		}
-	}
-	if (colorfulBackground) {
-		style = {
-			position: 'relative',
-			backgroundColor: 'white',
 			...style,
 		}
 	}
@@ -62,7 +56,7 @@ Section.propTypes = {
 	pt0: PropTypes.bool,
 	pb0: PropTypes.bool,
 	backgroundImg: PropTypes.any,
-	colorfulBackground: PropTypes.bool
+	backgroundColor: PropTypes.oneOf(['white'])
 }
 
 export default Section

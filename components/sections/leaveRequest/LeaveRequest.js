@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import useWindowsSize from '/hooks/useWindowSize'
-import { Section, Container, Row, Col, Text, Input, Textarea, Button } from 'components/ui'
+import { Section, Container, Row, Col, Text, Input, Textarea, Button, FadeIn } from 'components/ui'
 import s from './leave-request.module.scss'
 
 const LeaveRequest = () => {
@@ -19,7 +19,7 @@ const LeaveRequest = () => {
 				<Row row={15}>
 					<Col sm={4} offset-sm={1} xl={5} order-sm={2}>
 						<div className={s['leave-request__images']}>
-							<div className={s.message}>
+							<FadeIn className={s.message} y={20}>
 								<Image
 									src='/images/sections/leave-request/message.png'
 									layout='fill'
@@ -27,8 +27,8 @@ const LeaveRequest = () => {
 									quality='100'
 									alt=''
 								/>
-							</div>
-							<div className={s.button}>
+							</FadeIn>
+							<FadeIn className={s.button} y={20} duration={1.25}>
 								<Image
 									src='/images/sections/leave-request/button.png'
 									layout='fill'
@@ -36,8 +36,8 @@ const LeaveRequest = () => {
 									quality='100'
 									alt=''
 								/>
-							</div>
-							<div className={s.plus}>
+							</FadeIn>
+							<FadeIn className={s.plus} y={20} duration={1.5}>
 								<Image
 									src='/images/sections/leave-request/plus.png'
 									layout='fill'
@@ -45,7 +45,7 @@ const LeaveRequest = () => {
 									quality='100'
 									alt=''
 								/>
-							</div>
+							</FadeIn>
 						</div>
 					</Col>
 					<Col sm={7} xl={6} order-sm={1}>

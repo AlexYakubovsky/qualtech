@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import { Section, Container, Row, Col, Text, Lottie } from 'components/ui'
+import { Section, Container, Row, Col, Text, Lottie, FadeIn } from 'components/ui'
 import s from './complex-approach.module.scss'
 
 const ComplexApproach = () => {
 	return (
-		<Section>
+		<Section className='z-index-1'>
 			<Container>
-				<div className={s['complex-approach']}>
+				<FadeIn className={s['complex-approach']}>
 					<Row row={15} align='center'>
 						<Col sm={5} order-sm={2}>
 							<div className={s['complex-approach__img']}>
@@ -40,7 +40,7 @@ const ComplexApproach = () => {
 							</div>
 						</Col>
 					</Row>
-				</div>
+				</FadeIn>
 			</Container>
 		</Section>
 	)
