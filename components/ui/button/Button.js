@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import Link from 'components/Link'
+import Link from 'components/utils/Link'
 import { Icon } from '../icon'
 import s from './style.module.scss'
 

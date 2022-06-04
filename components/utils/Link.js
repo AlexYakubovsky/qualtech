@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function ActiveLink({ children, withHeaderNav, ...props }) {
+export default function ActiveLink({ children, ...props }) {
 	const router = useRouter()
 	const [isMatchedLink, setMatchedLink] = useState(false)
 
 	useEffect(() => {
-		if (router.pathname === props.href || withHeaderNav) {
+		if (router.pathname === props.href) {
 			setMatchedLink(true)
 		}
 
 		return () => setMatchedLink(false)
-	}, [router.pathname, props.href, withHeaderNav])
+	}, [router.pathname, props.href])
 
 	let className = props.className || ''
 

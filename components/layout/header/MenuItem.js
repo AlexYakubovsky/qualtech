@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
-import { Text } from 'components/ui'
+import AnchorLink from 'components/utils/AnchorLink'
 import s from './header.module.scss'
 
 const MenuItem = ({
 	title,
 	link,
+	toggleHover,
 	isMenuOnHover,
-	toggleHover
+	closeMenu
 }) => {
 	const [onTagHover, setOnTagHover] = useState(false)
 
@@ -44,7 +45,11 @@ const MenuItem = ({
 			onMouseEnter={() => setOnTagHover(true)}
 			onMouseLeave={() => setOnTagHover(false)}
 		>
-			<Text>{title}</Text>
+			<AnchorLink
+				to={link}
+				title={title}
+				onClick={closeMenu}
+			/>
 		</motion.li>
 	)
 }
@@ -52,8 +57,9 @@ const MenuItem = ({
 MenuItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
-	isMenuOnHover: PropTypes.bool.isRequired,
 	toggleHover: PropTypes.func.isRequired,
+	isMenuOnHover: PropTypes.bool.isRequired,
+	closeMenu: PropTypes.func.isRequired
 }
 
 export default MenuItem

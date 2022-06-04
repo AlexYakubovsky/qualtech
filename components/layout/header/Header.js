@@ -92,8 +92,8 @@ const Header = React.memo(() => {
 			</FadeIn>
 			<nav className={s.header__nav}>
 				<motion.div className={s['header__nav-background']} variants={variantsBackground} />
-				<Menu />
-				<MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
+				<Menu closeMenu={toggleOpen}/>
+				<MenuToggle toggle={toggleOpen} isOpen={isOpen} />
 			</nav>
 			<Screen size='lg'>
 				<div className={s.header__buttons}>

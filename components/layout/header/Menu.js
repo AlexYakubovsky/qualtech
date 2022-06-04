@@ -6,13 +6,13 @@ import MenuItem from './MenuItem'
 import { Button, Screen, Text } from 'components/ui'
 import s from './header.module.scss'
 
-export default function Menu() {
+export default function Menu({ closeMenu }) {
 	const [isMenuOnHover, setIsMenuOnHover] = useState(false)
 	const { height } = useWindowSize()
 	const menu = [
 		{ title: 'Наши услуги', link: '#our-services' },
 		{ title: 'Как мы работаем', link: '#how-we-work' },
-		{ title: 'Стоимость услуг', link: '#services-cost' }
+		{ title: 'Стоимость услуг', link: '#price' }
 	]
 
 	const toggleHover = hasHover => setIsMenuOnHover(hasHover)
@@ -71,6 +71,7 @@ export default function Menu() {
 							link={menu.link}
 							toggleHover={toggleHover}
 							isMenuOnHover={isMenuOnHover}
+							closeMenu={closeMenu}
 						/>
 					)}
 				</motion.ul>

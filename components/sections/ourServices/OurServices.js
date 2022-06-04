@@ -8,7 +8,7 @@ export default function OurServices() {
 	const { size, deviceWidth } = useWindowSize()
 
 	return (
-		<Section backgroundColor='white'>
+		<Section id='#our-services' backgroundColor='white'>
 			<Container>
 				<Row row={15} align='center'>
 					<Col lg={5} xl={6} className='z-index-1'>

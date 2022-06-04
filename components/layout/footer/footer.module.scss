@@ -45,21 +45,43 @@
       height: 100%;
     }
 
-    li {
-      color: $gray;
-      text-transform: uppercase;
-      font-weight: 700;
+    .menu-item {
       font-size: 14px;
       line-height: 16px;
+      cursor: pointer;
       @media(min-width: $sm) {
         font-size: 18px;
       }
 
-        &:not(:last-child) {
+      &:not(:last-child) {
         margin-bottom: 15px;
         @media(min-width: $lg) {
           margin-bottom: 0;
           margin-right: 35px;
+        }
+      }
+
+      a span {
+        position: relative;
+        transition: .8s;
+
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $white;
+          margin-top: 5px;
+          transition: width .8s;
+        }
+
+        &:hover {
+          color: $white;
+
+          &::after {
+            width: 100%;
+          }
         }
       }
     }

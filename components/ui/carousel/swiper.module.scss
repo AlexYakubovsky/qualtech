@@ -5,6 +5,8 @@
 }
 
 .swiper {
+  overflow: initial !important;
+
   .swiper-pagination-bullet {
     background: $dark-gray;
     width: 21px;
