@@ -37,6 +37,7 @@ const Textarea = forwardRef(
 		const formInputWrapperClassList = cx(
 			s['form-input-wrapper'],
 			{
+				[s['view-' + view]]: view,
 				[s['error']]: errors?.[name],
 				[s['fluid']]: fluid
 			},
@@ -46,9 +47,6 @@ const Textarea = forwardRef(
 		const textareaClassList = cx(
 			s['input'],
 			s['textarea'],
-			{
-				[s['view-' + view]]: view
-			},
 			className
 		)
 
@@ -107,7 +105,7 @@ Textarea.propTypes = {
 	rules: PropTypes.object,
 	errors: PropTypes.object,
 	fluid: PropTypes.bool,
-	view: PropTypes.oneOf(['primary', 'modal'])
+	view: PropTypes.oneOf(['primary', 'secondary'])
 }
 
 export default Textarea

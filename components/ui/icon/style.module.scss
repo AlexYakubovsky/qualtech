@@ -23,14 +23,3 @@
 .sm {
   font-size: 20px;
 }
-
-.hover {
-  cursor: pointer;
-  transition: .2s;
-
-  &.hover-gray {
-    &:hover {
-      color: $gray;
-    }
-  }
-}

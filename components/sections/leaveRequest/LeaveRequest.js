@@ -14,7 +14,7 @@ const LeaveRequest = () => {
 	}
 
 	return (
-		<Section>
+		<Section id='#leave-request'>
 			<Container>
 				<Row row={15}>
 					<Col sm={4} offset-sm={1} xl={5} order-sm={2}>

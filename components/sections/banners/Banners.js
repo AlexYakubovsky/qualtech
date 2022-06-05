@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import useWindowsSize from 'hooks/useWindowSize'
-import { Section, Container, Row, Col, Carousel, SlideItem, Text, Button, Lottie, FadeIn } from 'components/ui'
+import { LeaveRequestModal } from 'components/modals'
+import { Section, Container, Row, Col, Carousel, SlideItem, Text, Button, Lottie, FadeIn, Modal } from 'components/ui'
 import img from 'images/backgrounds/0.svg'
 import s from './banners.module.scss'
 
 export default function Banners() {
+	const [isOpenModal, setIsOpenModal] = useState(false)
+	const [userClickedBanner, setUserClickedBanner] = useState('')
 	const { deviceWidth } = useWindowsSize()
 	const banners = [
 		{
@@ -30,6 +33,11 @@ export default function Banners() {
 		}
 	]
 
+	const openModal = (title) => {
+		setUserClickedBanner(title)
+		setIsOpenModal(true)
+	}
+
 	return (
 		<Section backgroundImg={img.src}>
 			<Container>
@@ -38,10 +46,10 @@ export default function Banners() {
 						allowTouchMove={true}
 						effect='fade'
 						loop={true}
-						speed={1400}
+						speed={2000}
 						pagination={deviceWidth !== 'small' && { clickable: true }}
 						autoplay={{
-							delay: 4500,
+							delay: 5000,
 							disableOnInteraction: false
 						}}
 						classNameWrapper={s.banners}
@@ -68,6 +76,7 @@ export default function Banners() {
 											size='lg'
 											className='offset-top-15 offset-sm-top-50 offset-xl-top-80'
 											fluid={deviceWidth === 'small'}
+											onClick={() => openModal(banner.title)}
 										>
 											{banner.button}
 										</Button>
@@ -78,6 +87,14 @@ export default function Banners() {
 					</Carousel>
 				</FadeIn>
 			</Container>
+
+			<Modal
+				isOpen={isOpenModal}
+				onRequestClose={() => setIsOpenModal(false)}
+				size='md'
+			>
+				<LeaveRequestModal requestFrom={userClickedBanner} />
+			</Modal>
 		</Section>
 	)
 }

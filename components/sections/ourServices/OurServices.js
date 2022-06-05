@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useWindowSize from 'hooks/useWindowSize'
-import { Section, Text, Button, Container, Row, Col, Screen, ColorfulBackground } from 'components/ui'
+import { LeaveRequestModal } from 'components/modals'
+import { Section, Text, Button, Container, Row, Col, Screen, ColorfulBackground, Modal } from 'components/ui'
 import ServiceItem from './ServiceItem'
 import s from './our-services.module.scss'
 
 export default function OurServices() {
-	const { size, deviceWidth } = useWindowSize()
+	const [isOpenModal, setIsOpenModal] = useState(false)
+	const { deviceWidth } = useWindowSize()
 
 	return (
 		<Section id='#our-services' backgroundColor='white'>
@@ -19,7 +21,13 @@ export default function OurServices() {
 							когда ресурсу необходима только поддержка
 						</Text>
 						<Screen size='lg'>
-							<Button view='secondary' className='offset-top-80'>Оставить заявку</Button>
+							<Button
+								view='secondary'
+								className='offset-top-80'
+								onClick={() => setIsOpenModal(true)}
+							>
+								Оставить заявку
+							</Button>
 						</Screen>
 					</Col>
 					<Col lg={7} xl={6} className='z-index-1'>
@@ -77,7 +85,8 @@ export default function OurServices() {
 							<Button
 								view='secondary'
 								className='offset-top-20'
-								fluid={size !== 'md'}
+								fluid={deviceWidth === 'small'}
+								onClick={() => setIsOpenModal(true)}
 							>
 								Оставить заявку
 							</Button>
@@ -90,6 +99,14 @@ export default function OurServices() {
 				className={s.colorful}
 				isActiveFade={deviceWidth === 'large'}
 			/>
+
+			<Modal
+				isOpen={isOpenModal}
+				onRequestClose={() => setIsOpenModal(false)}
+				size='md'
+			>
+				<LeaveRequestModal requestFrom='Наши услуги' />
+			</Modal>
 		</Section>
 	)
 }

@@ -137,6 +137,10 @@ $breakpoints: (
 }
 
 .offset {
+  &-top-5 {
+    margin-top: 5px;
+  }
+
   &-top-10 {
     margin-top: 10px;
   }
@@ -162,6 +166,10 @@ $breakpoints: (
   }
 
   @media (min-width: $sm) {
+    &-sm-top-15 {
+      margin-top: 15px;
+    }
+
     &-sm-top-30 {
       margin-top: 30px;
     }

@@ -5,6 +5,7 @@ import { contacts } from 'constants/contacts'
 import useEvent from 'hooks/useEvent'
 import useOverflow from 'hooks/useOverflow'
 import useWindowSize from 'hooks/useWindowSize'
+import AnchorLink from 'components/utils/AnchorLink'
 import MenuToggle from './MenuToggle'
 import Menu from './Menu'
 import { Button, Screen, FadeIn } from 'components/ui'
@@ -97,9 +98,11 @@ const Header = React.memo(() => {
 			<Screen size='lg'>
 				<div className={s.header__buttons}>
 					<motion.div variants={variantsFormButton}>
-						<Button size='md' iconRight='plus' className={s['apply-button']}>
-							Оставить заявку
-						</Button>
+						<AnchorLink to='#leave-request' onClick={toggleOpen}>
+							<Button size='md' iconRight='plus' className={s['apply-button']}>
+								Оставить заявку
+							</Button>
+						</AnchorLink>
 					</motion.div>
 					<FadeIn y={0}>
 						<Button

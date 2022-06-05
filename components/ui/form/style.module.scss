@@ -4,13 +4,37 @@
   position: relative;
   display: inline-block;
 
+  &.view-secondary {
+    .label {
+      color: $black;
+      font-weight: 700;
+    }
+
+    .input {
+      background: $white;
+      color: $black;
+      border-color: $gray-light;
+      padding: 7px 15px;
+      @media (min-width: $lg) {
+        height: 60px;
+        padding: 7px 25px;
+      }
+
+      &:focus,
+      &:hover,
+      &:active, {
+        box-shadow: 0 0 7px $gray-light;
+      }
+    }
+  }
+
   &.error {
     .input {
-      box-shadow: 0 0 7px $danger;
+      box-shadow: 0 0 7px $danger !important;
     }
 
     .label {
-      color: $danger;
+      color: $danger !important;
     }
   }
 
@@ -99,24 +123,34 @@
 .input {
   background: $black-light;
   color: $white;
-  font-size: 14px;
   font-weight: 500;
   width: 100%;
-  min-height: 35px;
-  padding: 10px 20px;
-  line-height: 17px;
+  min-height: 40px;
   border-radius: 7px;
   outline: none;
   font-family: inherit;
   transition: all 0.3s ease;
-  border: none;
+  border: 1px solid transparent;
+  text-overflow: ellipsis;
   margin: 0;
   appearance: none;
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px 15px;
   @media (min-width: $sm) {
     border-radius: 15px;
+    font-size: 19px;
+    line-height: 24px;
+    height: 55px;
+    padding: 15px 25px;
+  }
+  @media (min-width: $lg) {
+    font-size: 22px;
+    line-height: 30px;
+    height: 70px;
+    padding: 20px 40px;
   }
 
   &.textarea {
@@ -141,24 +175,6 @@
 
     &.suffix {
       padding-right: 70px;
-    }
-  }
-
-  &.view-primary {
-    font-size: 16px;
-    line-height: 22px;
-    padding: 10px 15px;
-    @media (min-width: $sm) {
-      font-size: 19px;
-      line-height: 24px;
-      height: 55px;
-      padding: 15px 25px;
-    }
-    @media (min-width: $lg) {
-      font-size: 22px;
-      line-height: 30px;
-      height: 70px;
-      padding: 20px 40px;
     }
   }
 

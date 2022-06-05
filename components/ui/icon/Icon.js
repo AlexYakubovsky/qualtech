@@ -10,7 +10,6 @@ const Icon = ({
 	size,
 	color,
 	title,
-	hoverColor,
 	...props
 }) => {
 	const classNames = cn(
@@ -18,8 +17,6 @@ const Icon = ({
 		{
 			[s[color]]: color,
 			[s[size]]: size,
-			[s.hover]: hoverColor,
-			[s['hover-' + hoverColor]]: hoverColor
 		},
 		className
 	)
@@ -42,8 +39,7 @@ Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm']),
 	color: PropTypes.oneOf(['white', 'gray']),
-	title: PropTypes.string,
-	hoverColor: PropTypes.oneOf(['gray'])
+	title: PropTypes.string
 }
 
 export default Icon

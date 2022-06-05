@@ -50,6 +50,7 @@ const Input = forwardRef(
 			s['form-input-wrapper'],
 			s[type],
 			{
+				[s['view-' + view]]: view,
 				[s['error']]: errors?.[name],
 				[s['fluid']]: fluid
 			},
@@ -62,8 +63,7 @@ const Input = forwardRef(
 				[s['prefix']]: prefix,
 				[s['suffix']]: suffix,
 				[s['password']]: togglePassword,
-				[s['text-center']]: textCenter,
-				[s['view-' + view]]: view
+				[s['text-center']]: textCenter
 			},
 			className
 		)
@@ -226,7 +226,7 @@ Input.propTypes = {
 	togglePassword: PropTypes.bool,
 	fluid: PropTypes.bool,
 	textCenter: PropTypes.bool,
-	view: PropTypes.oneOf(['primary', 'modal'])
+	view: PropTypes.oneOf(['primary', 'secondary'])
 }
 
 export default Input

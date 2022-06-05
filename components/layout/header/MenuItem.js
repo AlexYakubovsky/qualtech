@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import AnchorLink from 'components/utils/AnchorLink'
+import { Text } from 'components/ui'
 import s from './header.module.scss'
 
 const MenuItem = ({
@@ -47,9 +48,10 @@ const MenuItem = ({
 		>
 			<AnchorLink
 				to={link}
-				title={title}
 				onClick={closeMenu}
-			/>
+			>
+				<Text>{title}</Text>
+			</AnchorLink>
 		</motion.li>
 	)
 }

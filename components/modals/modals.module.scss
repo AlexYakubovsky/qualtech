@@ -1,0 +1,48 @@
+@import "styles/variables";
+
+.leave-request-modal {
+  display: flex;
+  flex-direction: column;
+
+  form {
+    &.form {
+      margin-top: 15px;
+      @media (min-width: $sm) {
+        margin-top: 25px;
+      }
+
+      .textarea {
+        height: 110px;
+      }
+
+      .submit {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        @media (min-width: $sm) {
+          margin-top: 20px;
+        }
+
+        .policy-agree {
+          color: $gray;
+          font-size: 9px;
+          line-height: 9px;
+          margin-top: 10px;
+          @media (min-width: $sm) {
+            font-size: 12px;
+            line-height: 13px;
+          }
+
+          span {
+            color: $gray;
+            transition: .3s ease;
+
+            &:hover {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

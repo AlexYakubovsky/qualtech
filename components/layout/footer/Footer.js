@@ -25,34 +25,19 @@ const Footer = () => {
 							<Col sm={6} lg={9} order-sm={2} order-lg={1}>
 								<ul className={s['footer__menu']}>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink
-											to='#our-services'
-											title='Наши услуги'
-											color='gray'
-											transform='uppercase'
-											weight='bold'
-											smooth
-										/>
+										<AnchorLink to='#our-services' smooth>
+											<Text color='gray' transform='uppercase' weight='bold'>Наши услуги</Text>
+										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink
-											to='#price'
-											title='Стоимость услуг'
-											color='gray'
-											transform='uppercase'
-											weight='bold'
-											smooth
-										/>
+										<AnchorLink to='#price' smooth>
+											<Text color='gray' transform='uppercase' weight='bold'>Стоимость услуг</Text>
+										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink
-											to='#how-we-work'
-											title='Как мы работаем'
-											color='gray'
-											transform='uppercase'
-											weight='bold'
-											smooth
-										/>
+										<AnchorLink to='#how-we-work' smooth>
+											<Text color='gray' transform='uppercase' weight='bold'>Как мы работаем</Text>
+										</AnchorLink>
 									</Text>
 								</ul>
 							</Col>

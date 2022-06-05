@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-scroll'
-import { Text } from 'components/ui'
 
 const AnchorLink = ({
+	children,
 	to,
 	offset,
 	smooth,
-	title,
-	size,
-	color,
-	weight,
-	transform,
 	...rest
 }) => {
 	return (
@@ -22,14 +17,7 @@ const AnchorLink = ({
 			spy={true}
 			{...rest}
 		>
-			<Text
-				size={size}
-				color={color}
-				weight={weight}
-				transform={transform}
-			>
-				{title}
-			</Text>
+			{children}
 		</Link>
 	)
 }
@@ -41,12 +29,7 @@ AnchorLink.defaultProps = {
 AnchorLink.propTypes = {
 	to: PropTypes.string.isRequired,
 	offset: PropTypes.number,
-	smooth: PropTypes.bool,
-	title: PropTypes.string.isRequired,
-	size: PropTypes.string,
-	color: PropTypes.string,
-	weight: PropTypes.string,
-	transform: PropTypes.string
+	smooth: PropTypes.bool
 }
 
 export default AnchorLink
