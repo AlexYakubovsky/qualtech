@@ -7,7 +7,7 @@ import useOverflow from 'hooks/useOverflow'
 import useWindowSize from 'hooks/useWindowSize'
 import MenuToggle from './MenuToggle'
 import Menu from './Menu'
-import { Text, Button, Screen, FadeIn } from 'components/ui'
+import { Button, Screen, FadeIn } from 'components/ui'
 import s from './header.module.scss'
 
 const Header = React.memo(() => {
@@ -86,13 +86,12 @@ const Header = React.memo(() => {
 		>
 			<FadeIn className={s.header__logo} y={0}>
 				<div className={s['logo-img']}>
-					<Image src='/images/logo.png' layout='fill' objectFit='cover' />
+					<Image src='/images/logo-text.svg' layout='fill' objectFit='cover' />
 				</div>
-				<Text size='xl'>Разработка сайтов</Text>
 			</FadeIn>
 			<nav className={s.header__nav}>
 				<motion.div className={s['header__nav-background']} variants={variantsBackground} />
-				<Menu closeMenu={toggleOpen}/>
+				<Menu closeMenu={toggleOpen} />
 				<MenuToggle toggle={toggleOpen} isOpen={isOpen} />
 			</nav>
 			<Screen size='lg'>

@@ -7,6 +7,7 @@ import s from './footer.module.scss'
 
 const Footer = () => {
 	const { deviceWidth } = useWindowsSize()
+	const year = new Date().getFullYear()
 
 	return (
 		<footer className={s.footer}>
@@ -19,7 +20,6 @@ const Footer = () => {
 									<div className={s.logo}>
 										<Image src='/images/logo.png' layout='fill' objectFit='cover' />
 									</div>
-									<Text color='gray' className={s.name}>Разработка сайтов</Text>
 								</div>
 							</Col>
 							<Col sm={6} lg={9} order-sm={2} order-lg={1}>
@@ -66,7 +66,7 @@ const Footer = () => {
 						</Row>
 					</div>
 					<div className={s.bottom}>
-						<Text as='p' size='xs' color='dark-gray'>© 2022 Разработка сайтов</Text>
+						<Text as='p' size='xs' color='dark-gray'>© {year} qualtech</Text>
 					</div>
 				</Container>
 			</Section>

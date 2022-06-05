@@ -8,7 +8,7 @@ export default function Layout({
 	return (
 		<>
 			<Head>
-				<title>Управление магазином</title>
+				<title>qualtech</title>
 				<link rel='icon' href='/favicon.png' />
 				<meta
 					name='viewport'

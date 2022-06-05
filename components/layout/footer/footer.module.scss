@@ -22,13 +22,12 @@
 
     .logo {
       position: relative;
-      height: 31px;
-      width: 31px;
-      margin-right: 8px;
-    }
-
-    .name {
-      font-size: 22px;
+      height: 80px;
+      width: 89px;
+      @media(min-width: $sm) {
+        height: 100px;
+        width: 112px;
+      }
     }
   }
 
