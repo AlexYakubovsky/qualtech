@@ -26,7 +26,7 @@ const Header = React.memo(() => {
 		open: (height = 1000) => ({
 			clipPath: deviceWidth === 'large'
 				? `circle(${height * 2 + 200}px at 50% 50px)`
-				: `circle(${height * 2 + 200}px at 20px 20px)`,
+				: `circle(${height * 2 + 200}px at 40px 20px)`,
 			transition: {
 				type: 'spring',
 				stiffness: 15,
@@ -36,7 +36,7 @@ const Header = React.memo(() => {
 		closed: {
 			clipPath: deviceWidth === 'large'
 				? 'circle(30px at 50% 50px)'
-				: 'circle(30px at 20px 20px)',
+				: 'circle(30px at 40px 20px)',
 			transition: {
 				type: 'spring',
 				delay: 0.5,

@@ -90,7 +90,6 @@ const Price = () => {
 			<FadeIn
 				className={s['service-price-item__img']}
 				y={0}
-				delay={0.3}
 				once={false}
 			>
 				<Image

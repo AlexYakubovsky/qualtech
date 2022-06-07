@@ -2,7 +2,10 @@
 
 .banners {
   margin-top: 40px;
+  min-height: 620px;
   @media (min-width: $sm) {
+    min-height: auto;
+
     & > div {
       padding-bottom: 45px;
     }
