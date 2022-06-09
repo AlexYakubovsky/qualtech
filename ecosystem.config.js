@@ -6,8 +6,8 @@ module.exports = {
 		args: "run start",
 
 		//advanced features
-		instances: 2,
-		exec_mode: "cluster",
+		// instances: 2,
+		// exec_mode: "cluster",
 		watch: false,
 		max_memory_restart: "1G",
 
