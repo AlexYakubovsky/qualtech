@@ -181,7 +181,12 @@
           flex-direction: row;
         }
 
-        button {
+        a {
+          width: 100%;
+          @media (min-width: $sm) {
+            min-height: 60px
+          }
+
           &:not(:last-child) {
             margin-bottom: 15px;
             @media (min-width: $sm) {

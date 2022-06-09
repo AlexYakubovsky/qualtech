@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { contacts } from 'constants/contacts'
 import useWindowSize from 'hooks/useWindowSize'
 import MenuItem from './MenuItem'
+import AnchorLink from 'components/utils/AnchorLink'
 import { Button, Screen, Text } from 'components/ui'
 import s from './header.module.scss'
 
@@ -77,9 +78,11 @@ export default function Menu({ closeMenu }) {
 				</motion.ul>
 				<Screen size='lg' down>
 					<motion.div className={s['menu__buttons-mobile']} variants={variantsMenuFooter}>
-						<Button size='md' iconRight='plus' className={s['apply-button']} fluid>
-							Оставить заявку
-						</Button>
+						<AnchorLink to='#leave-request' onClick={closeMenu}>
+							<Button size='md' iconRight='plus' className={s['apply-button']} fluid>
+								Оставить заявку
+							</Button>
+						</AnchorLink>
 						<Button
 							as='a'
 							href={`tel:${contacts.number}`}
