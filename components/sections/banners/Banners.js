@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import useWindowsSize from 'hooks/useWindowSize'
 import { LeaveRequestModal } from 'components/modals'
 import { Section, Container, Row, Col, Carousel, SlideItem, Text, Button, Lottie, FadeIn, Modal } from 'components/ui'
@@ -37,6 +37,8 @@ export default function Banners() {
 		setUserClickedBanner(title)
 		setIsOpenModal(true)
 	}
+
+	const closeModal = () => setIsOpenModal(false)
 
 	return (
 		<Section backgroundImg={img.src}>
@@ -90,10 +92,13 @@ export default function Banners() {
 
 			<Modal
 				isOpen={isOpenModal}
-				onRequestClose={() => setIsOpenModal(false)}
+				onRequestClose={closeModal}
 				size='md'
 			>
-				<LeaveRequestModal requestFrom={userClickedBanner} />
+				<LeaveRequestModal
+					requestFrom={userClickedBanner}
+					onAfterSuccess={closeModal}
+				/>
 			</Modal>
 		</Section>
 	)

@@ -1,16 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import useWindowsSize from '/hooks/useWindowSize'
+import { useHttp } from 'hooks/useHttp'
+import { useToastify } from 'hooks/useToastify'
 import { Section, Container, Row, Col, Text, Input, Textarea, Button, FadeIn } from 'components/ui'
 import s from './leave-request.module.scss'
 
 const LeaveRequest = () => {
-	const { register, handleSubmit, formState: { errors } } = useForm()
+	const { register, handleSubmit, setValue, formState: { errors } } = useForm()
 	const { deviceWidth } = useWindowsSize()
+	const { request, loading, requestErrors } = useHttp()
 
-	const onSubmit = data => {
-		console.log(data)
+	useEffect(() => {
+		useToastify(requestErrors)
+	}, [requestErrors, useToastify])
+
+	const onSubmit = async (data) => {
+		try {
+			const body = { ...data, from: 'Нижняя форма' }
+			const response = await request('/api/feedback', 'POST', body, {
+				'Accept': 'application/json, text/plain, */*'
+			})
+
+			if (!response) throw new Error()
+
+			useToastify(response.message)
+			setValue('name', '')
+			setValue('phone', '')
+			setValue('message', '')
+		} catch {
+			useToastify(requestErrors)
+		}
 	}
 
 	return (
@@ -96,6 +117,7 @@ const LeaveRequest = () => {
 										<Button
 											type='submit'
 											fluid={deviceWidth === 'small'}
+											disabled={loading}
 										>
 											Оставить заявку
 										</Button>

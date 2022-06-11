@@ -9,6 +9,8 @@ export default function OurServices() {
 	const [isOpenModal, setIsOpenModal] = useState(false)
 	const { deviceWidth } = useWindowSize()
 
+	const closeModal = () => setIsOpenModal(false)
+
 	return (
 		<Section id='#our-services' backgroundColor='white'>
 			<Container>
@@ -102,10 +104,13 @@ export default function OurServices() {
 
 			<Modal
 				isOpen={isOpenModal}
-				onRequestClose={() => setIsOpenModal(false)}
+				onRequestClose={closeModal}
 				size='md'
 			>
-				<LeaveRequestModal requestFrom='Наши услуги' />
+				<LeaveRequestModal
+					requestFrom='Наши услуги'
+					onAfterSuccess={closeModal}
+				/>
 			</Modal>
 		</Section>
 	)
