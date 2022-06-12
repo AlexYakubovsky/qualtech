@@ -24,7 +24,7 @@ export default async function (req, res) {
 		//TODO добавить сохранение в БД
 		const mailData = {
 			from: 'qualtech.mail@yandex.ru',
-			to: ['qualtech.mail@yandex.ru', 'alex.yakubovsky.g@gmail.com'],
+			to: ['info@qualtech.ru', 'alex.yakubovsky.g@gmail.com'],
 			subject: `qualtech - заявка с сайта`,
 			text: message,
 			html: `
