@@ -74,7 +74,10 @@ const LeaveRequestModal = ({ requestFrom, onAfterSuccess }) => {
 					view='secondary'
 					classNameInputWrapper='offset-top-10 offset-sm-top-15'
 					register={register}
-					rules={{ required: { value: true, message: 'Поле обязательное' } }}
+					rules={{
+						required: { value: true, message: 'Поле обязательное' },
+						minLength: { value: 10, message: 'Минимум 10 символов' }
+					}}
 					errors={errors}
 					fluid
 				/>

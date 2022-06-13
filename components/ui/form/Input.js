@@ -73,9 +73,20 @@ const Input = forwardRef(
 			setIsRequired(required || rules?.required?.value)
 
 			if (inputType === 'tel' && inputRef.current) {
-				const maskOptions = {
+				const currentInput = inputRef.current.firstChild
+				const numberMask = IMask(currentInput, {
 					mask: '+{7} (000) 000-00-00'
-				}
+				})
+
+				// currentInput.addEventListener('focus', () => {
+				// 	numberMask.updateOptions({ lazy: false })
+				// })
+				//
+				// currentInput.addEventListener('blur', () => {
+				// 	numberMask.updateOptions({ lazy: true })
+				// 	// if (!numberMask.masked.rawInputValue) numberMask.value = ''
+				// })
+
 				setValidation(
 					register
 						? {
@@ -89,8 +100,6 @@ const Input = forwardRef(
 						}
 						: null
 				)
-
-				IMask(inputRef.current.firstChild, maskOptions)
 			}
 			if (inputType === 'email' && inputRef.current) {
 				setValidation(

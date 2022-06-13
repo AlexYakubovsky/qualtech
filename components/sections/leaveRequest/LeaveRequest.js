@@ -108,7 +108,10 @@ const LeaveRequest = () => {
 										className={s.textarea}
 										label='Сообщение'
 										register={register}
-										rules={{ required: { value: true, message: 'Поле обязательное' } }}
+										rules={{
+											required: { value: true, message: 'Поле обязательное' },
+											minLength: { value: 10, message: 'Минимум 10 символов' }
+										}}
 										errors={errors}
 										fluid
 									/>
