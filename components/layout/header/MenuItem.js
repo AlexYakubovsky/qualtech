@@ -47,7 +47,7 @@ const MenuItem = ({
 			onMouseLeave={() => setOnTagHover(false)}
 		>
 			<AnchorLink
-				to={link}
+				href={link}
 				onClick={closeMenu}
 			>
 				<Text>{title}</Text>

@@ -12,7 +12,7 @@ export default function HowWeWork() {
 
 	return (
 		<Section
-			id='#how-we-work'
+			id='how-we-work'
 			backgroundImg={img.src}
 			style={{
 				backgroundRepeat: 'repeat',

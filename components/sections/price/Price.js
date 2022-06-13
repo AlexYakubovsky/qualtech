@@ -104,7 +104,7 @@ const Price = () => {
 	)
 
 	return (
-		<Section id='#price'>
+		<Section id='price'>
 			<Container>
 				<Text as='h2'>Стоимость услуг</Text>
 				<Row row={deviceWidth === 'small' ? 15 : 20} className='offset-top-40 offset-sm-top-50 offset-xl-top-70'>

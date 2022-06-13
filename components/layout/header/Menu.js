@@ -11,9 +11,9 @@ export default function Menu({ closeMenu }) {
 	const [isMenuOnHover, setIsMenuOnHover] = useState(false)
 	const { height } = useWindowSize()
 	const menu = [
-		{ title: 'Наши услуги', link: '#our-services' },
-		{ title: 'Как мы работаем', link: '#how-we-work' },
-		{ title: 'Стоимость услуг', link: '#price' }
+		{ title: 'Наши услуги', link: 'our-services' },
+		{ title: 'Как мы работаем', link: 'how-we-work' },
+		{ title: 'Стоимость услуг', link: 'price' }
 	]
 
 	const toggleHover = hasHover => setIsMenuOnHover(hasHover)

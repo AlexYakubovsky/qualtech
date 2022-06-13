@@ -12,7 +12,7 @@ export default function OurServices() {
 	const closeModal = () => setIsOpenModal(false)
 
 	return (
-		<Section id='#our-services' backgroundColor='white'>
+		<Section id='our-services' backgroundColor='white'>
 			<Container>
 				<Row row={15} align='center'>
 					<Col lg={5} xl={6} className='z-index-1'>

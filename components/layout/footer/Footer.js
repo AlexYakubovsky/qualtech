@@ -36,7 +36,7 @@ const Footer = () => {
 							<Col sm={9} order-sm={1}>
 								<ul className={s['footer__menu']}>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink to='#our-services' smooth>
+										<AnchorLink href='our-services' smooth>
 											<Text
 												color='gray'
 												transform='uppercase'
@@ -48,7 +48,7 @@ const Footer = () => {
 										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink to='#price' smooth>
+										<AnchorLink href='price' smooth>
 											<Text
 												color='gray'
 												transform='uppercase'
@@ -60,7 +60,7 @@ const Footer = () => {
 										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
-										<AnchorLink to='#how-we-work' smooth>
+										<AnchorLink href='how-we-work' smooth>
 											<Text
 												color='gray'
 												transform='uppercase'
