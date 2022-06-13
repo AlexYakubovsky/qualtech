@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { contacts } from 'constants/contacts'
+import { contacts, links } from 'constants/contacts'
 import useWindowsSize from 'hooks/useWindowSize'
 import AnchorLink from 'components/utils/AnchorLink'
 import { Container, Section, Row, Col, Text } from 'components/ui'
@@ -26,10 +26,10 @@ const Footer = () => {
 							<Col sm={6} lg={4} order-sm={2}>
 								<ul className={s['footer__contacts']}>
 									<li>
-										<Text as='a' href={`mailto:${contacts.email}`} size='md'>{contacts.email}</Text>
+										<Text as='a' href={`mailto:${contacts.email}`} size='lg'>{contacts.email}</Text>
 									</li>
 									<li>
-										<Text as='a' href={`tel:${contacts.number}`} size='md'>{contacts.number}</Text>
+										<Text as='a' href={`tel:${contacts.number}`} size='md' className={s.number}>{contacts.number}</Text>
 									</li>
 								</ul>
 							</Col>
@@ -37,26 +37,62 @@ const Footer = () => {
 								<ul className={s['footer__menu']}>
 									<Text as='li' className={s['menu-item']}>
 										<AnchorLink to='#our-services' smooth>
-											<Text color='gray' transform='uppercase' weight='bold'>Наши услуги</Text>
+											<Text
+												color='gray'
+												transform='uppercase'
+												weight='bold'
+												className={s['border-from-left-to-right']}
+											>
+												Наши услуги
+											</Text>
 										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
 										<AnchorLink to='#price' smooth>
-											<Text color='gray' transform='uppercase' weight='bold'>Стоимость услуг</Text>
+											<Text
+												color='gray'
+												transform='uppercase'
+												weight='bold'
+												className={s['border-from-left-to-right']}
+											>
+												Стоимость услуг
+											</Text>
 										</AnchorLink>
 									</Text>
 									<Text as='li' className={s['menu-item']}>
 										<AnchorLink to='#how-we-work' smooth>
-											<Text color='gray' transform='uppercase' weight='bold'>Как мы работаем</Text>
+											<Text
+												color='gray'
+												transform='uppercase'
+												weight='bold'
+												className={s['border-from-left-to-right']}
+											>
+												Как мы работаем
+											</Text>
 										</AnchorLink>
 									</Text>
 								</ul>
 							</Col>
-
 						</Row>
 					</div>
 					<div className={s.bottom}>
-						<Text as='p' size='xs' color='dark-gray'>© {year} qualtech</Text>
+						<Text
+							as='a'
+							href={links.privacy}
+							size='xs'
+							color='gray'
+							className={s['border-from-left-to-right']}
+						>
+							Политика конфиденциальности
+						</Text>
+						<Text
+							as='p'
+							size='xs'
+							color='gray'
+							className={s.year}
+						>
+							© {year} qualtech
+						</Text>
 					</div>
 				</Container>
 			</Section>

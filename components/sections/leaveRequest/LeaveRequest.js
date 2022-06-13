@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
+import { links } from 'constants/contacts'
 import useWindowsSize from '/hooks/useWindowSize'
 import { useHttp } from 'hooks/useHttp'
 import { useToastify } from 'hooks/useToastify'
@@ -121,9 +122,11 @@ const LeaveRequest = () => {
 										>
 											Оставить заявку
 										</Button>
-										<Text as='p' className={s['policy-agree']}>Нажимая кнопку «Отправить заявку»‎, вы автоматически
-											соглашаетесь с <Text decoration='underline' cursor='pointer'> политикой конфиденциальности </Text>
-											и даете свое согласие на обработку персональных данных.</Text>
+										<Text as='p' className={s['policy-agree']}>
+											Нажимая кнопку «Отправить заявку»‎, вы автоматически соглашаетесь с&thinsp;
+											<Text as='a' href={links.privacy} decoration='underline' target='_blank'>политикой
+												конфиденциальности</Text> и даете свое согласие на обработку персональных данных.
+										</Text>
 									</div>
 								</Col>
 							</Row>

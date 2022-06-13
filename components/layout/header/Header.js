@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useCycle } from 'framer-motion'
-import { contacts } from 'constants/contacts'
+import { contacts, links } from 'constants/contacts'
 import useEvent from 'hooks/useEvent'
 import useOverflow from 'hooks/useOverflow'
 import useWindowSize from 'hooks/useWindowSize'
@@ -70,7 +71,7 @@ const Header = React.memo(() => {
 		if (distanceY) {
 			headerRef?.current?.classList.add(s.scroll)
 		} else {
-			headerRef.current.classList.remove(s.scroll)
+			headerRef?.current?.classList.remove(s.scroll)
 		}
 	}
 
@@ -86,9 +87,11 @@ const Header = React.memo(() => {
 			animate={isOpen ? 'open' : 'closed'}
 		>
 			<FadeIn className={s.header__logo} y={0}>
-				<div className={s['logo-img']}>
-					<Image src='/images/logo-text.svg' layout='fill' objectFit='cover' />
-				</div>
+				<Link href={links.index}>
+					<div className={s['logo-img']}>
+						<Image src='/images/logo-text.svg' layout='fill' objectFit='cover' />
+					</div>
+				</Link>
 			</FadeIn>
 			<nav className={s.header__nav}>
 				<motion.div className={s['header__nav-background']} variants={variantsBackground} />

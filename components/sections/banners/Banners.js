@@ -66,7 +66,7 @@ export default function Banners() {
 									</Col>
 									<Col sm={6} order-sm={1}>
 										<div className={s['banners__text']}>
-											<Text as='h1'>{banner.title}</Text>
+											<Text as={i === 0 ?'h1' : 'p'} view='seo'>{banner.title}</Text>
 											<Text as='p' className='offset-top-15 offset-sm-top-30' size='xl' whiteSpace='pre-line'>
 												{banner.text}
 											</Text>

@@ -33,9 +33,10 @@
             line-height: 13px;
           }
 
-          span {
+          a {
             color: $gray;
             transition: .3s ease;
+            display: inline-block;
 
             &:hover {
               color: $black;

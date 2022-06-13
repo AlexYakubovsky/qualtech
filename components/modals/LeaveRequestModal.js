@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useForm } from 'react-hook-form'
+import { links } from 'constants/contacts'
 import { useHttp } from 'hooks/useHttp'
 import { useToastify } from 'hooks/useToastify'
 import { Button, Input, Text, Textarea } from 'components/ui'
@@ -85,9 +86,11 @@ const LeaveRequestModal = ({ requestFrom, onAfterSuccess }) => {
 					>
 						Оставить заявку
 					</Button>
-					<Text as='p' className={s['policy-agree']}>Нажимая кнопку «Отправить заявку»‎, вы автоматически
-						соглашаетесь с <Text decoration='underline' cursor='pointer'> политикой конфиденциальности </Text>
-						и даете свое согласие на обработку персональных данных.</Text>
+					<Text as='p' className={s['policy-agree']}>
+						Нажимая кнопку «Отправить заявку»‎, вы автоматически соглашаетесь с&thinsp;
+						<Text as='a' href={links.privacy} decoration='underline' target='_blank'>политикой
+							конфиденциальности</Text> и даете свое согласие на обработку персональных данных.
+					</Text>
 				</div>
 			</form>
 		</div>

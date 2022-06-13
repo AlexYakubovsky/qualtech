@@ -67,8 +67,7 @@
   }
 }
 
-h1 {
-  &.text-seo,
+h1, .text-seo {
   &.text {
     font-size: 36px;
     line-height: 36px;
